@@ -1,15 +1,16 @@
 import { Inter } from '@next/font/google'
-import Nav from './Nav'
+import Header from './Components/Header'
+import Nav from './Components/Nav'
+import SectionOne from './Components/SectionOne'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main>
+    <main className='max-w-[1920px] mx-auto min-h-screen'>
       <Nav />
-      <header className='h-screen flex justify-center items-center'>
-        <h1>Hello Next 13</h1>
-      </header>
+      <Header />
+      <SectionOne />
     </main>
   )
 }

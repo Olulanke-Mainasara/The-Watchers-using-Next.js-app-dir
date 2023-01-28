@@ -17,7 +17,7 @@ function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 z-50 h-16 w-screen bg-black dark:bg-gray-800/0 backdrop-blur-lg">
-        <div className="max-w-[1440px] h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
+        <div className="h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
             <div className="flex space-x-20">
                 <a href="#" className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 xtraSmall:text-lg iphone5:text-xl allIL:hover:after:w-0"><img src="/The Universe 2.jpg" className="w-10 h-10 rounded-full" alt="The Watchers. Logo"/><span>The Watchers.</span></a>
             
