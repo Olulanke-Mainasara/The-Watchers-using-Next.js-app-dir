@@ -6,7 +6,7 @@ function SectionOne() {
     <section className="w-full h-screen flex allIL:flex-col allIL:h-auto allIL:mt-16">
         <section className="w-1/2 h-full flex items-center justify-center allIL:w-screen allIL:h-extraHeight">
             <div className="relative w-3/5 h-3/4 allIL:h-full allEM:w-4/5 allT:w-4/5">
-                <Image src={ "/headerM.jpg" } fill loading="lazy" className="absolute border border-black dark:border-white rounded-2xl top-0 left-0" alt=""/>
+                <Image src="/headerM.jpg" fill priority className="absolute border border-black dark:border-white rounded-2xl top-0 left-0" alt=""/>
             </div>
         </section>
         
