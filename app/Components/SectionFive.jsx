@@ -11,7 +11,7 @@ function SectionFive() {
         </section>
 
         <section className="w-1/2 h-full flex items-center justify-center allIL:w-screen allIL:h-2/5">
-            <div className="w-4/5 h-3/5 flex flex-col gap-7 dark:text-white allIL:my-14">
+            <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allIL:my-14">
                 <h1 className="text-7xl allEM:text-5xl allT:text-3xl">Feed your curiosity no matter where you are</h1>
 
                 <p className="text-2xl 2xl:text-4xl lg:text-3xl md:text-3xl allEM:text-lg allT:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis culpa corrupti unde tempora voluptates, necessitatibus aliquam optio cum tenetur nam architecto mollitia quam odit consequatur eum at atque placeat assumenda!
