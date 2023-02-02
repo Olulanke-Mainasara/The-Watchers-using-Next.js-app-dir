@@ -4,6 +4,7 @@ import Nav from './Components/Nav'
 import SectionFive from './Components/SectionFive'
 import SectionOne from './Components/SectionOne'
 import SectionThree from './Components/SectionThree'
+import Footer from './Components/Footer'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <NewsCarousel />
       <SectionThree />
       <SectionFive />
+      <Footer />
     </main>
   )
 }

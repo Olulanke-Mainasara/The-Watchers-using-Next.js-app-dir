@@ -17,7 +17,7 @@ function News({ width, news, controls }) {
 
                       <div className="text-white flex flex-col items-center justify-center gap-6 basis-2/5 md:basis-1/2 allEM:basis-3/5 allT:basis-3/5 allM:justify-evenly allM:gap-0 px-6">
                           <h5 className="text-xl allT:text-lg">{newsItem.sn}</h5>
-                          <p className="text-5xl leading-[60px] allEM:text-3xl allEM:leading-[45px] allT:text-2xl">{newsItem.text}</p>
+                          <p className="text-5xl leading-[60px] lg:text-3xl allEM:text-3xl allEM:leading-[45px] allT:text-2xl">{newsItem.text}</p>
                           <Link className="text-xl border rounded-2xl p-4 allEM:p-3 allEM:text-lg allT:p-3 allT:text-base hover:text-gray-800 hover:bg-white transition-colors duration-500" href="#">Read more</Link>
                       </div>
                   </div>

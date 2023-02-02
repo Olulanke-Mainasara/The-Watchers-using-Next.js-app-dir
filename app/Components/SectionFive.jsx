@@ -1,29 +1,31 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function SectionFive() {
   return (
-    <section className="w-full h-screen flex allIL:flex-col allIL:h-auto allIL:mt-56 allIL:mb-20">
-        <section className="w-1/2 h-full flex items-center justify-center allIL:w-screen allIL:h-extraHeight">
-            <div className="relative w-3/5 h-3/4 allIL:h-full allEM:w-4/5 allT:w-4/5">
-                <Image src="/headerM.jpg" fill className="absolute border border-black dark:border-white rounded-2xl w-full h-full top-0 left-0" alt=""/>
+    <section className="w-full h-screen flex allEMT:flex-col allIL:h-auto allIL:py-[210px]">
+        <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-extraHeight">
+            <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-4/5">
+                <Image src="/headerM.jpg" fill priority className="absolute border border-black dark:border-white rounded-2xl top-0 left-0" alt=""/>
             </div>
         </section>
-
-        <section className="w-1/2 h-full flex items-center justify-center allIL:w-screen allIL:h-2/5">
-            <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allIL:my-14">
-                <h1 className="text-7xl allEM:text-5xl allT:text-3xl">Feed your curiosity no matter where you are</h1>
-
-                <p className="text-2xl 2xl:text-4xl lg:text-3xl md:text-3xl allEM:text-lg allT:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis culpa corrupti unde tempora voluptates, necessitatibus aliquam optio cum tenetur nam architecto mollitia quam odit consequatur eum at atque placeat assumenda!
-                </p>
+        
+        <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-2/5 allEMT:py-14">
+            <div className="w-4/5 allLM:h-[555px] flex flex-col justify-center gap-7 dark:text-white allEMT:text-center">
+                <h1 className="text-7xl allLM:text-5xl allEM:text-5xl allT:text-3xl">Feed your curiosity, no matter where you are</h1>
+        
+                <p className="text-2xl 2xl:text-4xl allLM:text-lg allEM:text-lg allT:text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis culpa corrupti unde tempora voluptates, necessitatibus aliquam optio cum tenetur nam architecto mollitia quam odit consequatur eum at atque placeat assumenda!</p>
 
                 <div className="flex justify-between">
-                    <p className="relative text-6xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Downloads']">520K+</p>
-
-                    <p className="relative text-6xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Daily-reads']">400K+</p>
-
-                    <p className="relative text-6xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Dailies']">10+</p>
+                    <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Downloads']">520K+</p>
+        
+                    <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Reads-Day']">400K+</p>
+        
+                    <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Dailies']">10+</p>
                 </div>
+
+                <Link href="#categories" title="Categories" className="rounded-3xl bg-gray-800 px-9 py-4 text-white w-fit mx-auto text-xl transition-colors duration-300 hover:bg-gray-800 hover:text-white allT:text-base allEM:text-base allIL:hover:bg-white allIL:hover:text-gray-800 mt-10">Start reading</Link>
             </div>
         </section>
     </section>

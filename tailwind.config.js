@@ -29,6 +29,9 @@ module.exports = {
       allEM: { min: "322px", max: "767px" },
       // => @media (min-width: 322px and max-width: 767px) { ... }
 
+      allEMT: { min: "0px", max: "767px" },
+      // => @media (min-width: 322px and max-width: 767px) { ... }
+
       md: { min: "768px", max: "1023px" },
       // => @media (min-width: 768px and max-width: 1023px) { ... }
 
@@ -36,6 +39,9 @@ module.exports = {
       // => @media (max-width: 1023px) { ... }
 
       lg: { min: "1024px", max: "1309px" },
+      // => @media (min-width: 1024px and max-width: 1309px) { ... }
+
+      allLM: { min: "768px", max: "1309px" },
       // => @media (min-width: 1024px and max-width: 1309px) { ... }
 
       allIL: { max: "1309px" },

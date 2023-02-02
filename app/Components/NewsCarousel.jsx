@@ -9,7 +9,6 @@ import { motion, useAnimation } from 'framer-motion';
 import { news } from './Arrays';
 import News from './News';
 
-
 function NewsCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
@@ -65,7 +64,7 @@ function NewsCarousel() {
         Today's Featured Articles
       </h1>
 
-      <motion.div className="relative w-screen h-[500px] 2xl:h-[650px] md:h-[800px] allT:h-[420px] flex items-center overflow-x-hidden">
+      <motion.div className="relative w-screen h-[500px] 2xl:h-[650px] lg:h-[350px] md:h-[800px] allT:h-[420px] flex items-center overflow-x-hidden">
         <Link title="Previous page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ prevNews } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
         <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ nextNews } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
