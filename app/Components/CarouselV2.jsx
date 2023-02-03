@@ -1,20 +1,22 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { motion, useAnimation } from 'framer-motion';
 import CarouselItem from './CarouselItem';
 
 function CarouselV2({ heading, array }) {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [width, setWidth] = useState(400);
+    const [width, setWidth] = useState(460);
 
     const controls = useAnimation();
 
     useEffect(() => {
         const interval = setInterval(() => {
         setCurrentSlide(prevSlide => {
-            if (prevSlide === news.length - 1) {
+            if (prevSlide === array.length - 3) {
             return 0;
             }
             return prevSlide + 1;
@@ -32,7 +34,7 @@ function CarouselV2({ heading, array }) {
 
     function nextItem() {
         setCurrentSlide(prevSlide => {
-        if (prevSlide === array.length - 1) {
+        if (prevSlide === array.length - 3) {
             return 0;
         }
         return prevSlide + 1;
@@ -42,7 +44,7 @@ function CarouselV2({ heading, array }) {
     function prevItem() {
         setCurrentSlide(prevSlide => {
         if (prevSlide === -1) {
-            return array.length - 1;
+            return array.length - 3;
         }
         return prevSlide - 1;
         });

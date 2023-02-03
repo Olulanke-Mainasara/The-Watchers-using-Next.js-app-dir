@@ -3,7 +3,7 @@ import Hero from './Components/Hero'
 import SectionOne from './Components/SectionOne'
 import SectionThree from './Components/SectionThree'
 import SectionFive from './Components/SectionFive'
-import { categories } from './Arrays';
+import { categories } from './Components/Arrays';
 import CarouselV2 from './Components/CarouselV2'
 
 export default function Home() {
