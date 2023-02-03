@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-function News({ width, news, controls }) {
+function News({ news, controls }) {
   return (
     <div className='h-full flex'>
           {
             news.map(newsItem => {
               return (
                 <motion.div className={`w-screen h-full`} animate={controls} key={newsItem.id}>
-                  <div className="w-[90%] h-full overflow-hidden rounded-2xl mx-auto bg-black list-none flex items-center justify-center allM:flex-col">
+                  <div className="w-[90%] h-full overflow-hidden rounded-2xl mx-auto bg-black flex items-center justify-center allM:flex-col">
                       <div className='relative basis-3/4 md:basis-1/2 allEM:basis-2/5 allT:basis-2/5 w-full h-full'>
                           <Image src={newsItem.imgsrc} fill priority alt="News Image" />
                       </div>

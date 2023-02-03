@@ -3,9 +3,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-function Header() {
+function Hero() {
   return (
-     <header className="flex h-screen items-center bg-[url(/Header.jpeg)] bg-cover bg-fixed ultraWide:bg-scroll dark:bg-scroll allIL:bg-[url(/headerM.jpg)] allIL:bg-bottom">
+     <header className="flex h-screen items-center bg-[url(/Header.jpeg)] bg-cover bg-fixed dark:bg-scroll allIL:bg-[url(/headerM.jpg)] allIL:bg-bottom">
         <div className="w-full h-full justify-center flex flex-col gap-8 backdrop-brightness-50 text-center">
             <h1 className="text-white text-9xl md:text-8xl allEM:text-7xl allT:text-6xl">All Things Curious</h1>
             <h2 className="text-white text-4xl md:text-[26px] allEM:text-xl allT:text-lg">...Your one stop encyclopedia of <br className="lg:hidden md:hidden xl:hidden 2xl:hidden ultraWide:hidden"/>everything you want to know</h2>
@@ -18,4 +18,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Hero

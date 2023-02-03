@@ -1,21 +1,22 @@
 import NewsCarousel from './Components/NewsCarousel'
-import Header from './Components/Header'
-import Nav from './Components/Nav'
-import SectionFive from './Components/SectionFive'
+import Hero from './Components/Hero'
 import SectionOne from './Components/SectionOne'
 import SectionThree from './Components/SectionThree'
-import Footer from './Components/Footer'
+import SectionFive from './Components/SectionFive'
+import { categories } from './Arrays';
+import CarouselV2 from './Components/CarouselV2'
 
 export default function Home() {
   return (
-    <main className='max-w-[1920px] mx-auto min-h-screen'>
-      <Nav />
-      <Header />
-      <SectionOne />
-      <NewsCarousel />
-      <SectionThree />
-      <SectionFive />
-      <Footer />
-    </main>
+    <>
+      <Hero />
+      <main className='max-w-[1920px] mx-auto min-h-screen'>
+        <SectionOne />
+        <NewsCarousel />
+        <SectionThree />
+        <CarouselV2 heading={ "Our Categories" } array={ categories }/>
+        <SectionFive />
+      </main>
+    </>
   )
 }
