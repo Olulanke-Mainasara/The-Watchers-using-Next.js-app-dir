@@ -2,8 +2,9 @@ import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { news } from '../Arrays';
 
-function News({ news, controls }) {
+function News({ controls }) {
   return (
     <div className='h-full flex'>
           {

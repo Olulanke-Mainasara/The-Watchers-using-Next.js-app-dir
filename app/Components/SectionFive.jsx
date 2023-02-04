@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function SectionFive() {
   return (
-    <section className="w-full h-screen flex allEMT:flex-col allIL:h-auto allIL:py-[210px]">
+    <section className="w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:py-[210px]">
         <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-extraHeight">
             <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-4/5">
                 <Image src="/headerM.jpg" fill priority className="absolute border border-black dark:border-white rounded-2xl top-0 left-0" alt=""/>
@@ -25,7 +25,7 @@ function SectionFive() {
                     <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-3xl allT:after:text-sm after:content-['Dailies']">10+</p>
                 </div>
 
-                <Link href="#categories" title="Categories" className="rounded-3xl bg-gray-800 px-9 py-4 text-white w-fit mx-auto text-xl transition-colors duration-300 hover:bg-gray-800 hover:text-white allT:text-base allEM:text-base allIL:hover:bg-white allIL:hover:text-gray-800 mt-10">Start reading</Link>
+                <Link href="#categories" title="Categories" className="rounded-xl bg-gray-800 px-9 py-4 text-white w-fit text-xl allEMT:text-base mt-10 allEMT:mx-auto">Start reading</Link>
             </div>
         </section>
     </section>

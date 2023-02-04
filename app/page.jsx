@@ -1,10 +1,10 @@
-import NewsCarousel from './Components/NewsCarousel'
 import Hero from './Components/Hero'
 import SectionOne from './Components/SectionOne'
+import NewsCarousel from './Components/News-Carousel/NewsCarousel'
 import SectionThree from './Components/SectionThree'
+import CategoriesCarousel from './Components/Categories-Carousel/CategoriesCarousel'
 import SectionFive from './Components/SectionFive'
-import { categories } from './Components/Arrays';
-import CarouselV2 from './Components/CarouselV2'
+import ReviewsCarousel from './Components/Reviews-Carousel/ReviewsCarousel'
 
 export default function Home() {
   return (
@@ -14,8 +14,9 @@ export default function Home() {
         <SectionOne />
         <NewsCarousel />
         <SectionThree />
-        <CarouselV2 heading={ "Our Categories" } array={ categories }/>
+        <CategoriesCarousel />
         <SectionFive />
+        <ReviewsCarousel />
       </main>
     </>
   )

@@ -5,36 +5,25 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { motion, useAnimation } from 'framer-motion';
-import CarouselItem from './CarouselItem';
+import { reviews } from '../Arrays'
+import Reviews from './Review'
 
-function CarouselV2({ heading, array }) {
+function ReviewsCarousel() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [width, setWidth] = useState(460);
 
     const controls = useAnimation();
 
     useEffect(() => {
-        const interval = setInterval(() => {
-        setCurrentSlide(prevSlide => {
-            if (prevSlide === array.length - 3) {
-            return 0;
-            }
-            return prevSlide + 1;
-        });
-        }, 6000);
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
         controls.start({
         x: -currentSlide * width,
-        transition: { duration: 2 },
+        transition: { duration: 0.7 },
         });
     }, [currentSlide]);
 
     function nextItem() {
         setCurrentSlide(prevSlide => {
-        if (prevSlide === array.length - 3) {
+        if (prevSlide === reviews.length - 3) {
             return 0;
         }
         return prevSlide + 1;
@@ -43,27 +32,27 @@ function CarouselV2({ heading, array }) {
 
     function prevItem() {
         setCurrentSlide(prevSlide => {
-        if (prevSlide === -1) {
-            return array.length - 3;
+        if (prevSlide === 0) {
+            return reviews.length - 3;
         }
         return prevSlide - 1;
         });
     }
 
   return (
-    <section className="w-full overflow-hidden flex flex-col gap-10 items-center justify-center my-28 text-center">
+    <section className="w-full overflow-hidden flex flex-col gap-10 items-center justify-center mt-28 mb-16 text-center">
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
-        {heading}
+        Reviews
       </h1>
 
-      <motion.div className="relative w-screen h-[500px] 2xl:h-[650px] lg:h-[350px] md:h-[800px] allT:h-[420px] flex items-center overflow-x-hidden">
+      <motion.div className="relative w-screen h-[420px] flex items-center overflow-x-hidden">
         <Link title="Previous page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
-        <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
+        <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allEMT:hover:text-black allEM:shadow-none allT:shadow-none text-black allLM:text-white" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
-        <CarouselItem array={array} controls={controls}/>
+        <Reviews controls={controls}/>
       </motion.div>
     </section>
   )
 }
 
-export default CarouselV2
+export default ReviewsCarousel

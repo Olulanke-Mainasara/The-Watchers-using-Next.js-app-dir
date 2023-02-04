@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { motion, useAnimation } from 'framer-motion';
-import { news } from './Arrays';
+import { news } from '../Arrays';
 import News from './News';
 
 function NewsCarousel() {
@@ -68,7 +68,7 @@ function NewsCarousel() {
         <Link title="Previous page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ prevNews } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
         <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ nextNews } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
-        <News news={news} controls={controls}/>
+        <News controls={controls}/>
       </motion.div>
     </section>
   );
