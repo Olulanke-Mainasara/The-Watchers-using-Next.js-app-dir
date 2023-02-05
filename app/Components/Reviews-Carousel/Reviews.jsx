@@ -7,7 +7,7 @@ import { reviews } from '../Arrays';
 
 function Reviews({ controls }) {
   return (
-    <div className='h-full flex gap-[60px] pl-[60px] allEMT:pl-0'>
+    <div className='h-full flex gap-[60px] pl-[60px] allEMT:pl-0 allEMT:gap-0'>
           {
             reviews.map(reviewsItem => {
               return (

@@ -51,7 +51,7 @@ function NewsCarousel() {
 
   function prevNews() {
     setCurrentSlide(prevSlide => {
-      if (prevSlide === -1) {
+      if (prevSlide === 0) {
         return news.length - 1;
       }
       return prevSlide - 1;
@@ -65,8 +65,8 @@ function NewsCarousel() {
       </h1>
 
       <motion.div className="relative w-screen h-[500px] 2xl:h-[650px] lg:h-[350px] md:h-[800px] allT:h-[420px] flex items-center overflow-x-hidden">
-        <Link title="Previous page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ prevNews } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
-        <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ nextNews } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
+        <Link title="Previous page" className="w-12 h-12 allIL:h-14 text-black bg-white flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tl-none allIL:rounded-bl-none allIL:hover:text-black allLM:hover:bg-white allEMT:shadow-none" onClick={ prevNews } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
+        <Link title="Next page" className="w-12 h-12 allIL:h-14 text-black bg-white flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tr-none allIL:rounded-br-none allIL:hover:text-black allLM:hover:bg-white allEMT:shadow-none" onClick={ nextNews } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
         <News controls={controls}/>
       </motion.div>

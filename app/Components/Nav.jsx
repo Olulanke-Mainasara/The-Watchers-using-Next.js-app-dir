@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faBars, faChevronDown, faClose, faMoon, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faBars, faChevronDown, faClose, faMoon, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function Nav() {
     const [navMenu, setMenu] = useState("allIL:-right-full")
-    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset ? window.pageYOffset : 0);
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
@@ -50,7 +50,7 @@ function Nav() {
         <div className="h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
             <Link href="#" className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 allT:text-lg allIL:hover:after:w-0"><img src="/The Universe 2.jpg" className="w-10 h-10 rounded-full" alt="The Watchers Logo"/><span>The Watchers.</span></Link>
         
-            <ul className={"flex items-center text-white gap-20 allIL:absolute allIL:top-0 allIL:h-screen allIL:w-full allIL:flex-col allIL:justify-center allEM:gap-12 allIL:bg-black duration-500 " + navMenu}>
+            <ul className={"flex items-center text-white gap-20 allIL:absolute allIL:top-0 allIL:h-screen allIL:w-full allIL:flex-col allIL:justify-center allEMT:gap-12 allIL:bg-black duration-500 " + navMenu}>
                 <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:bg-white after:duration-500 after:content-[''] after:scale-x-110">Home</Link></li>
                 <li className="group relative">
                     <Link href="#" className="cursor-default allLM:text-2xl">Our categories  <FontAwesomeIcon icon={ faChevronDown } /></Link>
@@ -66,8 +66,8 @@ function Nav() {
                         </ul>
                     </div>
                 </li>
+                <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:duration-500 after:content-[''] hover:transition-transform hover:after:scale-x-110">About us</Link></li>
                 <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:duration-500 after:content-[''] hover:transition-transform hover:after:scale-x-110">Contact</Link></li>
-                <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:duration-500 after:content-[''] hover:transition-transform hover:after:scale-x-110">About</Link></li>
         
                 <button title="Close navigation menu" onClick={ closeMenu } className="text-white text-3xl absolute top-14 iphone5:top-7 left-1/2 -translate-x-1/2 xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ faClose } /></button>
         

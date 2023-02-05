@@ -6,11 +6,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { motion, useAnimation } from 'framer-motion';
 import { reviews } from '../Arrays'
-import Reviews from './Review'
+import Reviews from './Reviews'
 
 function ReviewsCarousel() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [width, setWidth] = useState(460);
+
+    const [width, setWidth] = useState(window.innerWidth <= 767 ? window.innerWidth : 460);
+    useEffect(() => {
+      setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
+      window.addEventListener("resize", () => setWidth(window.innerWidth <= 767 ? window.innerWidth : 460));
+      return () => window.removeEventListener("resize", () => setWidth(window.innerWidth <= 767 ? window.innerWidth : 460));
+    }, []);
+
+    const [recoil, setRecoil] = useState(window.innerWidth <= 767 ? 1 : 3);
+    useEffect(() => {
+      setRecoil(window.innerWidth <= 1309 ? 1 : 3);
+      window.addEventListener("resize", () => setRecoil(window.innerWidth <= 1309 ? 1 : 3));
+      return () => window.removeEventListener("resize", () => setRecoil(window.innerWidth <= 1309 ? 1 : 3));
+    }, []);
 
     const controls = useAnimation();
 
@@ -23,7 +36,7 @@ function ReviewsCarousel() {
 
     function nextItem() {
         setCurrentSlide(prevSlide => {
-        if (prevSlide === reviews.length - 3) {
+        if (prevSlide === reviews.length - recoil) {
             return 0;
         }
         return prevSlide + 1;
@@ -33,21 +46,21 @@ function ReviewsCarousel() {
     function prevItem() {
         setCurrentSlide(prevSlide => {
         if (prevSlide === 0) {
-            return reviews.length - 3;
+            return reviews.length - recoil;
         }
         return prevSlide - 1;
         });
     }
 
   return (
-    <section className="w-full overflow-hidden flex flex-col gap-10 items-center justify-center mt-28 mb-16 text-center">
+    <section className="w-full overflow-hidden flex flex-col gap-10 items-center justify-center mt-28 mb-40 text-center">
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Reviews
       </h1>
 
       <motion.div className="relative w-screen h-[420px] flex items-center overflow-x-hidden">
-        <Link title="Previous page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allIL:hover:bg-transparent allIL:hover:text-black allEM:shadow-none allT:shadow-none text-black" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
-        <Link title="Next page" className="w-12 allEM:w-6 allT:w-4 h-12 flex items-center justify-center z-10 bg-none absolute border-none rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allIL:hover:bg-transparent allEMT:hover:text-black allEM:shadow-none allT:shadow-none text-black allLM:text-white" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
+        <Link title="Previous page" className="w-12 h-12 allIL:h-14 text-black bg-white flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tl-none allIL:rounded-bl-none allIL:hover:text-black allIL:hover:bg-white allEMT:shadow-none" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
+        <Link title="Next page" className="w-12 h-12 allIL:h-14 text-black bg-white flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors hover:bg-black hover:text-white top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tr-none allIL:rounded-br-none allIL:hover:text-black allIL:hover:bg-white allEMT:shadow-none" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
         <Reviews controls={controls}/>
       </motion.div>
