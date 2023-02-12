@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { categories } from '../Arrays';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { categories } from '../Arrays';
 
 function Categories({ controls }) {
   return (

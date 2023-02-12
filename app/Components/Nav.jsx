@@ -85,7 +85,7 @@ function Nav() {
         
                 <button title="Theme" onClick={ setTheTheme } className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ faSun } /></button>            
 
-                <div className="flex gap-10 items-center xl:hidden 2xl:hidden">
+                <div className="flex gap-10 allT:gap-5 items-center xl:hidden 2xl:hidden">
                     <button title="Start reading" className="rounded-3xl bg-white px-7 py-3 text-black text-2xl transition-colors duration-300 allEMT:text-base">Start reading</button>
 
                     <button type="Log in" className='py-2 px-3 allLM:text-2xl text-white'>Log in <FontAwesomeIcon icon={ faArrowRight } /></button>

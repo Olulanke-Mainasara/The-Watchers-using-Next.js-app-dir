@@ -10,7 +10,7 @@ function Footer() {
             <section className='flex flex-col h-full justify-center basis-[30%] allLM:flex-row allLM:items-center allLM:basis-1/2 allLM:border-white allIL:border-b'>
                 <div className='flex h-full flex-col justify-center gap-10 allIL:basis-1/2 border-slate-100 border-b allLM:border-b-0 allEM:py-8 allT:py-8'>
                     <img className="w-10 h-10 rounded-full mx-auto" alt="The Watchers. Logo" src={ "/The Universe 2.jpg" } />
-                    <p className='text-lg 2xl:text-2xl'>Making the world a better place through constructing elegant hierarchies</p>
+                    <p className='text-lg 2xl:text-2xl'>Inspiring Minds, Everywhere, Unveiling Knowledge and Inspiration.</p>
                 </div>
 
                 <div className='h-full flex flex-col gap-5 justify-center allEM:py-8 allT:py-8'>
@@ -23,48 +23,52 @@ function Footer() {
                 </div>
             </section>
 
-            <section className='border-white border-l allEM:border-l-0 allT:border-l-0 flex h-full justify-evenly basis-[70%] allLM:basis-1/2 allEM:grid allEM:grid-cols-2 allEM:py-8 allEM:gap-8 allT:py-8 allT:gap-8 allT:grid allT:grid-cols-2'>
-                <div className='flex flex-col gap-4 justify-center h-full'>
-                    <p className='text-xl'>Solutions</p>
+            <section className='border-white border-l allEMT:border-l-0 flex h-full basis-[70%] allLM:basis-1/2 allEMT:flex-col allEMT:gap-8 allEMT:py-8'>
+                <div className='basis-1/2 h-full flex justify-evenly allEMT:justify-around border-r border-white allEMT:border-none'>
+                    <div className='flex flex-col gap-4 justify-center'>
+                        <p className='text-xl'>Solutions</p>
 
-                    <div className='flex flex-col gap-3 text-slate-300'>
-                        <Link href={ "#" }><p>Marketing</p></Link>
-                        <Link href={ "#" }><p>Analytics</p></Link>
-                        <Link href={ "#" }><p>Commerse</p></Link>
-                        <Link href={ "#" }><p>Insights</p></Link>
+                        <div className='flex flex-col gap-3 text-slate-300'>
+                            <Link href={ "#" }><p>Marketing</p></Link>
+                            <Link href={ "#" }><p>Analytics</p></Link>
+                            <Link href={ "#" }><p>Commerse</p></Link>
+                            <Link href={ "#" }><p>Insights</p></Link>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col gap-4 justify-center'>
+                        <p className='text-xl'>Solutions</p>
+
+                        <div className='flex flex-col gap-3 text-slate-300'>
+                            <Link href={ "#" }><p>Marketing</p></Link>
+                            <Link href={ "#" }><p>Analytics</p></Link>
+                            <Link href={ "#" }><p>Commerse</p></Link>
+                            <Link href={ "#" }><p>Insights</p></Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className='flex flex-col gap-4 justify-center h-full'>
-                    <p className='text-xl'>Solutions</p>
+                <div className='basis-1/2  h-full flex justify-evenly allEMT:justify-around'>
+                    <div className='flex flex-col gap-4 justify-center'>
+                        <p className='text-xl'>Solutions</p>
 
-                    <div className='flex flex-col gap-3 text-slate-300'>
-                        <Link href={ "#" }><p>Marketing</p></Link>
-                        <Link href={ "#" }><p>Analytics</p></Link>
-                        <Link href={ "#" }><p>Commerse</p></Link>
-                        <Link href={ "#" }><p>Insights</p></Link>
+                        <div className='flex flex-col gap-3 text-slate-300'>
+                            <Link href={ "#" }><p>Marketing</p></Link>
+                            <Link href={ "#" }><p>Analytics</p></Link>
+                            <Link href={ "#" }><p>Commerse</p></Link>
+                            <Link href={ "#" }><p>Insights</p></Link>
+                        </div>
                     </div>
-                </div>
 
-                <div className='flex flex-col gap-4 justify-center h-full'>
-                    <p className='text-xl'>Solutions</p>
+                    <div className='flex flex-col gap-4 justify-center'>
+                        <p className='text-xl'>Solutions</p>
 
-                    <div className='flex flex-col gap-3 text-slate-300'>
-                        <Link href={ "#" }><p>Marketing</p></Link>
-                        <Link href={ "#" }><p>Analytics</p></Link>
-                        <Link href={ "#" }><p>Commerse</p></Link>
-                        <Link href={ "#" }><p>Insights</p></Link>
-                    </div>
-                </div>
-
-                <div className='flex flex-col gap-4 justify-center h-full'>
-                    <p className='text-xl'>Solutions</p>
-
-                    <div className='flex flex-col gap-3 text-slate-300'>
-                        <Link href={ "#" }><p>Marketing</p></Link>
-                        <Link href={ "#" }><p>Analytics</p></Link>
-                        <Link href={ "#" }><p>Commerse</p></Link>
-                        <Link href={ "#" }><p>Insights</p></Link>
+                        <div className='flex flex-col gap-3 text-slate-300'>
+                            <Link href={ "#" }><p>Marketing</p></Link>
+                            <Link href={ "#" }><p>Analytics</p></Link>
+                            <Link href={ "#" }><p>Commerse</p></Link>
+                            <Link href={ "#" }><p>Insights</p></Link>
+                        </div>
                     </div>
                 </div>
             </section>
