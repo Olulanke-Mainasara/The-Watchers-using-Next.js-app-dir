@@ -6,11 +6,13 @@ import CategoriesCarousel from './Components/Categories-Carousel/CategoriesCarou
 import SectionFive from './Components/SectionFive'
 import ReviewsCarousel from './Components/Reviews-Carousel/ReviewsCarousel'
 
+console.log("I re-rendered")
+
 export default function Home() {
   return (
     <>
       <Hero />
-      <main className='max-w-[1920px] mx-auto min-h-screen'>
+      <main>
         <SectionOne />
         <NewsCarousel />
         <SectionThree />

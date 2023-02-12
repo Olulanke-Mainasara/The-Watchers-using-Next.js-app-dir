@@ -12,7 +12,7 @@ function Reviews({ controls }) {
             reviews.map(reviewsItem => {
               return (
                 <motion.div className={`w-[400px] allEMT:w-screen h-full`} animate={controls} key={reviewsItem.id}>
-                  <div className="w-full allEMT:w-[90%] allEMT:mx-auto h-full rounded-2xl bg-black text-white flex flex-col items-center justify-evenly allEMT:px-[5%]">
+                  <div className="w-full allEMT:w-[90%] allEMT:mx-auto h-full rounded-2xl bg-black text-white dark:bg-white dark:text-black flex flex-col items-center justify-evenly allEMT:px-[5%]">
                       <div className='w-14 h-14 rounded-full relative border overflow-hidden'>
                           <Image src="/My Logo 1.jpg" fill priority alt="Category Image" />
                       </div>

@@ -5,6 +5,18 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faBars, faChevronDown, faClose, faMoon, faSearch } from '@fortawesome/free-solid-svg-icons'
 
+// Giving the user the ability to manually select a mode
+export function setTheTheme() {
+    if (document.documentElement.classList.contains("light")) {
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
+    }
+    else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+    }
+}
+
 function Nav() {
     const [navMenu, setMenu] = useState("allIL:-right-full")
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset ? window.pageYOffset : 0);
@@ -46,7 +58,7 @@ function Nav() {
     }
 
   return (
-    <nav className={`fixed top-0 left-0 z-50 ${visible ? "" : "allIL:opacity-0"} allIL:duration-300 h-16 w-screen bg-black dark:bg-gray-800/0 backdrop-blur-l`}>
+    <nav className={`fixed top-0 left-0 z-50 ${visible ? "" : "allIL:opacity-0"} allIL:duration-300 h-16 w-screen bg-black dark:bg-gray-800/0 backdrop-blur-lg`}>
         <div className="h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
             <Link href="#" className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 allT:text-lg allIL:hover:after:w-0"><img src="/The Universe 2.jpg" className="w-10 h-10 rounded-full" alt="The Watchers Logo"/><span>The Watchers.</span></Link>
         
@@ -56,7 +68,7 @@ function Nav() {
                     <Link href="#" className="cursor-default allLM:text-2xl">Our categories  <FontAwesomeIcon icon={ faChevronDown } /></Link>
         
                     <div id="dropList" className="absolute z-30 h-0 group-hover:h-[362px] -left-[45%] pt-[22px] duration-500 overflow-hidden">
-                        <ul className="border rounded-xl text-center w-60 bg-black dark:bg-gray-600 overflow-hidden">
+                        <ul className="border rounded-xl text-center w-60 bg-black dark:bg-white overflow-hidden">
                             <li className="w-full py-4 px-3 hover:bg-gray-800 duration-500 allIL:hover:bg-transparent"><Link href="#" className="py-4 px-[26px]">Space Exploration</Link></li>
                             <li className="w-full py-4 px-3 hover:bg-gray-800 duration-500 allIL:hover:bg-transparent"><Link href="#" className="py-4 px-[26px]">World of Science</Link></li>
                             <li className="w-full py-4 px-2 hover:bg-gray-800 duration-500 allIL:hover:bg-transparent"><Link href="#" className="py-4 px-[26px]">Feat in Transportation</Link></li>
@@ -71,10 +83,10 @@ function Nav() {
         
                 <button title="Close navigation menu" onClick={ closeMenu } className="text-white text-3xl absolute top-14 iphone5:top-7 left-1/2 -translate-x-1/2 xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ faClose } /></button>
         
-                <button title="Theme" className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white allIL:hover:bg-transparent xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ faMoon } /></button>            
+                <button title="Theme" onClick={ setTheTheme } className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ faMoon } /></button>            
 
                 <div className="flex gap-10 items-center xl:hidden 2xl:hidden">
-                    <button title="Start reading" className='py-2 px-3 allLM:text-2xl allLM:p-4 bg-white text-gray-800 rounded-lg'>Start reading</button>
+                    <button title="Start reading" className="rounded-3xl bg-white px-7 py-3 text-black text-2xl transition-colors duration-300 allEMT:text-base">Start reading</button>
 
                     <button type="Log in" className='py-2 px-3 allLM:text-2xl text-white'>Log in <FontAwesomeIcon icon={ faArrowRight } /></button>
                 </div>
@@ -85,7 +97,7 @@ function Nav() {
             <button title="Open navigation menu" onClick={ openMenu } className="xl:hidden 2xl:hidden text-white text-2xl"><FontAwesomeIcon icon={ faBars } /></button>
             
             <div className="flex gap-6 items-center allIL:hidden">
-                <button title="Theme" className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"><FontAwesomeIcon icon={ faMoon } /></button>
+                <button title="Theme" onClick={ setTheTheme } className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"><FontAwesomeIcon icon={ faMoon } /></button>
 
                 <button title="Search" className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"><FontAwesomeIcon icon={ faSearch } /></button>
 

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function SectionThree() {
   return (
-    <section className="w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:py-[210px]">
+    <section className="row w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:py-[210px]">
         <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-2/5">
             <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allLM:h-[705px] allEMT:text-center allEMT:my-14">
                 <h1 className="text-5xl 2xl:text-7xl md:text-3xl allT:text-3xl">We inspire, no matter the reader</h1>
@@ -13,7 +13,7 @@ function SectionThree() {
 
                 <p className="text-xl 2xl:text-3xl md:text-base allEMT:text-lg">Whether you're a curious child, a student looking for a reliable source of information, or simply someone seeking to expand your horizons, our content is designed to cater to your needs. We believe that everyone has the potential to be inspired, and it is our mission to bring that inspiration to you, no matter who you are or where you come from.</p>
 
-                <Link href="#categories" title="Categories" className="rounded-xl bg-gray-800 px-9 py-4 text-white w-fit text-xl allEMT:text-base mt-3 allEMT:mx-auto">Start reading</Link>
+                <Link href="#categories" title="Categories" className="rounded-xl bg-black px-4 py-3 text-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white border duration-500 w-fit text-xl mt-3 allEMT:mx-auto">Start reading</Link>
             </div>
         </section>
 
