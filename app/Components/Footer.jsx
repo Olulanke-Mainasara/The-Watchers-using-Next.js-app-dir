@@ -5,7 +5,7 @@ import { faFacebook, faGithub, faInstagram, faTwitter, faYoutube } from '@fortaw
 
 function Footer() {
   return (
-    <footer className='w-full h-[70vh] flex flex-col px-10 bg-gray-800 text-white allEM:h-fit allEM:px-8 allT:h-fit allT:px-6'>
+    <footer style={{ scrollSnapAlign: "start" }} className='w-full h-[70vh] flex flex-col px-10 bg-gray-800 text-white allEM:h-fit allEM:px-8 allT:h-fit allT:px-6'>
         <section className='flex gap-10 allIL:gap-0 basis-4/5 allIL:flex-col'>
             <section className='flex flex-col h-full justify-center basis-[30%] allLM:flex-row allLM:items-center allLM:basis-1/2 allLM:border-white allIL:border-b'>
                 <div className='flex h-full flex-col justify-center gap-10 allIL:basis-1/2 border-slate-100 border-b allLM:border-b-0 allEM:py-8 allT:py-8'>

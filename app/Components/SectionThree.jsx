@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 function SectionThree() {
   return (
-    <section className="row w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:py-[210px]">
-        <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-2/5">
+    <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen flex allEMT:flex-col allEMT:h-auto">
+        <section className="w-1/2 h-full flex items-center justify-end allIL:justify-center allEMT:w-screen allEMT:h-2/5">
             <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allLM:h-[705px] allEMT:text-center allEMT:my-14">
                 <h1 className="text-5xl 2xl:text-7xl md:text-3xl allT:text-3xl">We inspire, no matter the reader</h1>
 

@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 function SectionOne() {
   return (
-    <section className="row w-full h-screen flex allEMT:flex-col allIL:h-auto allEMT:mt-16 allLM:py-[210px]">
+    <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen flex allEMT:flex-col allEMT:h-auto allEMT:mt-16">
         <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-extraHeight">
             <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-4/5">
                 <Image src="/Section1.JPG" fill priority className="absolute border border-black dark:border-white rounded-2xl top-0 left-0" alt=""/>
             </div>
         </section>
         
-        <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-2/5 allEMT:py-14">
+        <section className="w-1/2 h-full flex items-center justify-start allIL:justify-center allEMT:w-screen allEMT:h-2/5 allEMT:py-14">
             <div className="w-4/5 allLM:h-[555px] flex flex-col justify-center gap-7 dark:text-white allEMT:text-center">
                 <h1 className="text-5xl 2xl:text-7xl md:text-3xl allT:text-3xl">Welcome to the chronicles of the universe</h1>
         

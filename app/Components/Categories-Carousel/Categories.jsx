@@ -21,7 +21,7 @@ function Categories({ controls }) {
                       <div className="dark:text-black text-white flex flex-col items-center justify-evenly basis-[60%] px-[5%]">
                           <h5 className="text-3xl allT:text-2xl">{categoriesItem.title}</h5>
                           <p className="text-base allT:text-base">{categoriesItem.text}</p>
-                          <Link className="text-xl rounded-2xl px-4 py-3 allIL:px-5 allEM:text-lg allT:text-base bg-black text-white hover:text-black hover:bg-white dark:hover:bg-black allIL:hover:text-white allIL:hover:bg-black transition-colors duration-500" href="#">View <FontAwesomeIcon icon={ faArrowRight } /></Link>
+                          <Link className="text-xl rounded-2xl px-4 py-3 allIL:px-5 allEM:text-lg allT:text-base bg-black text-white hover:text-black hover:bg-white dark:hover:bg-black dark:hover:text-white allIL:hover:text-white allIL:hover:bg-black transition-colors duration-500" href="#">View <FontAwesomeIcon icon={ faArrowRight } /></Link>
                       </div>
                   </div>
                 </motion.div>

@@ -55,14 +55,14 @@ function ReviewsCarousel() {
   const reviewsWithControls = useMemo(() => <Reviews controls={controls}/>, [controls]);
 
   return (
-    <section className="w-full h-screen row overflow-hidden flex flex-col gap-10 items-center justify-center text-center">
+    <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center">
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Reviews
       </h1>
 
       <div className="relative w-screen h-[420px] flex items-center overflow-x-hidden">
-        <Link title="Previous page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tl-none allIL:rounded-bl-none dark:text-white dark:bg-black hover:dark:bg-white hover:dark:text-black allIL:hover:dark:text-white allIL:hover:dark:bg-black allEMT:shadow-none" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
-        <Link title="Next page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tr-none allIL:rounded-br-none dark:text-white dark:bg-black hover:dark:bg-white hover:dark:text-black allIL:hover:dark:text-white allIL:hover:dark:bg-black allEMT:shadow-none" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
+        <Link title="Previous page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tl-none allIL:rounded-bl-none dark:text-white bg-white dark:bg-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black allIL:hover:text-black allIL:dark:hover:text-white allIL:hover:bg-white allIL:dark:hover:bg-black allEMT:shadow-none" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
+        <Link title="Next page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tr-none allIL:rounded-br-none dark:text-white bg-white dark:bg-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black allIL:hover:text-black allIL:dark:hover:text-white allIL:hover:bg-white allIL:dark:hover:bg-black allEMT:shadow-none" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
 
         {reviewsWithControls}
       </div>
