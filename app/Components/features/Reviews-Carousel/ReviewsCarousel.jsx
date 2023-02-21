@@ -1,12 +1,10 @@
 'use client'
 
 import React, { useEffect, useState, useMemo } from 'react'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { useAnimation } from 'framer-motion';
-import { reviews } from '../Arrays'
+import { reviews } from '../../data/Arrays'
 import Reviews from './Reviews'
+import { LeftArrow, RightArrow } from '../../UI/Arrows';
 
 function ReviewsCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,7 +50,7 @@ function ReviewsCarousel() {
     });
   }
 
-  const reviewsWithControls = useMemo(() => <Reviews controls={controls}/>, [controls]);
+  const reviewsWithControls = useMemo(() => <Reviews controls={controls}/>, []);
 
   return (
     <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center">
@@ -61,8 +59,8 @@ function ReviewsCarousel() {
       </h1>
 
       <div className="relative w-screen h-[420px] flex items-center overflow-x-hidden">
-        <Link title="Previous page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 left-2 allIL:left-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tl-none allIL:rounded-bl-none dark:text-white bg-white dark:bg-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black allIL:hover:text-black allIL:dark:hover:text-white allIL:hover:bg-white allIL:dark:hover:bg-black allEMT:shadow-none" onClick={ prevItem } href="#"><FontAwesomeIcon icon={ faChevronLeft } /></Link>
-        <Link title="Next page" className="w-12 h-12 allIL:h-14 flex items-center justify-center z-10 absolute rounded-full text-xl transition-colors top-1/2 -translate-y-1/2 right-2 allIL:right-0 duration-300 allEM:w-6 allT:w-4 allIL:rounded-tr-none allIL:rounded-br-none dark:text-white bg-white dark:bg-black hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black allIL:hover:text-black allIL:dark:hover:text-white allIL:hover:bg-white allIL:dark:hover:bg-black allEMT:shadow-none" onClick={ nextItem } href="#"><FontAwesomeIcon icon={ faChevronRight } /></Link>
+        <LeftArrow onclick={ prevItem }/>
+        <RightArrow onclick={ nextItem }/>
 
         {reviewsWithControls}
       </div>

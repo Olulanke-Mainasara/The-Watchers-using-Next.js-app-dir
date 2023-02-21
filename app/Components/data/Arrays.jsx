@@ -26,3 +26,9 @@ export const reviews = [
     { id: 8, title: "Jack Strong", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis culpa corrupti unde tempora voluptates, necessitatibus!" },
     { id: 9, title: "Kirsten Branch", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis culpa corrupti unde tempora voluptates, necessitatibus!" },
 ]
+
+export const footerlinks = [
+    {id: 1, title: "Solutions", linkOne: "Marketing", linkTwo: "Analytics", linkThree: "Commerse", linkFour: "Insights"},
+    {id: 2, title: "Solutions", linkOne: "Marketing", linkTwo: "Analytics", linkThree: "Commerse", linkFour: "Insights"},
+    {id: 3, title: "Solutions", linkOne: "Marketing", linkTwo: "Analytics", linkThree: "Commerse", linkFour: "Insights"},
+]

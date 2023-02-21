@@ -10,7 +10,7 @@ function Hero() {
             <h1 className="text-white text-9xl md:text-8xl allEM:text-7xl allT:text-6xl">All Things Curious</h1>
             <h2 className="text-white text-3xl md:text-2xl allEM:text-xl allT:text-lg">Inspiring Minds, Everywhere, Unveiling Knowledge and Inspiration.</h2>
             <div className="mt-4">
-              <Link href="#categories" title="Categories" className="rounded-3xl bg-white px-7 py-4 text-black text-2xl transition-colors duration-300 hover:bg-black hover:text-white allEMT:text-base allIL:hover:bg-white allIL:hover:text-gray-800">Start reading</Link>
+              <Link href="#categories" title="Categories" className="rounded-3xl bg-white px-7 py-4 text-black text-2xl transition-colors duration-300 hover:bg-black hover:text-white allEMT:text-base">Start reading</Link>
               <Link href="#featuredArticles" title="Today's Articles" className="px-7 py-4 text-white text-2xl allEMT:text-base allEM:pr-0 allT:hidden">Today's articles <FontAwesomeIcon icon={ faArrowRight } /></Link>
             </div>
         </div>
