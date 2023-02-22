@@ -18,7 +18,7 @@ function Footer() {
                     <p className='text-xl 2xl:text-2xl'>Subscribe to our newsletter</p>
                     <p className='block text-slate-00'>The latest news, articles, and resources, sent to your inbox weekly.</p>
                     <form action="" className='flex gap-5 allEM:flex-col allT:flex-col'>
-                        <input type="text" placeholder='Enter your email' className='py-2 px-3 bg-gray-600 border border-slate-100 rounded-lg w-full outline-none' />
+                        <input type="text" placeholder='Your e-mail...' className='py-2 px-3 bg-gray-600 border border-slate-100 rounded-lg w-full outline-none' />
                         <button type="submit" className='py-2 px-3 bg-white text-gray-800 hover:bg-gray-800 hover:text-white border duration-500 rounded-lg allEM:w-fit allT:w-fit allEM:mx-auto allT:mx-auto'>Subscribe</button>
                     </form>
                 </div>

@@ -6,32 +6,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faBars, faChevronDown, faClose, faMoon, faSearch, faSun } from '@fortawesome/free-solid-svg-icons'
 import { categories } from '../data/Arrays'
 
-// Giving the user the ability to manually select a mode
-export function setTheTheme() {
-    if (document.documentElement.classList.contains("light")) {
-        document.documentElement.classList.remove("light");
-        document.documentElement.classList.add("dark");
-    }
-    else {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-    }
-}
-
 function Nav() {
     const [navMenu, setMenu] = useState("allIL:-right-full")
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset ? window.pageYOffset : 0);
     const [visible, setVisible] = useState(true);
     const [themeIcon, setThemeIcon] = useState(faSun)
 
-    useEffect(() => {
-        if(document.documentElement.classList.contains("light")) {
-            setThemeIcon(faMoon)
-        }
-        else {
-            setThemeIcon(faSun)
-        }
-    }, [document.documentElement.classList])
+    function setTheTheme() {
+      if (document.documentElement.classList.contains("light")) {
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
+        setThemeIcon(faSun);
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+        setThemeIcon(faMoon);
+      }
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -67,7 +58,7 @@ function Nav() {
     <nav className={`fixed top-0 left-0 z-50 ${visible ? "" : "allIL:opacity-0"} allIL:duration-300 h-16 w-screen bg-black dark:bg-gray-800/0 backdrop-blur-lg`}>
         <div className="h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
             <Link href="#" className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 allT:text-lg allIL:hover:after:w-0"><img src="/The Universe 2.jpg" className="w-10 h-10 rounded-full" alt="The Watchers Logo"/><span>The Watchers.</span></Link>
-       ``
+       
             <ul className={`flex items-center text-white gap-20 allIL:absolute allIL:top-0 allIL:h-screen allIL:w-full allIL:flex-col allIL:justify-center allEMT:gap-12 allIL:bg-black duration-500 ${navMenu}`}>
                 <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:bg-white after:duration-500 after:content-[''] after:scale-x-110">Home</Link></li>
                 <li className="group relative">
