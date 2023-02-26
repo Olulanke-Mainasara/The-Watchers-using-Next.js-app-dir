@@ -6,7 +6,7 @@ function SectionOne() {
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen flex allEMT:flex-col allEMT:h-auto allEMT:mt-16"
+      className="w-full h-screen flex allEMT:flex-col allIL:h-auto allEMT:mt-16 allLM:mb-36"
     >
       <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-extraHeight">
         <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-3/4">

@@ -6,7 +6,7 @@ function SectionThree() {
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen flex allEMT:flex-col allEMT:h-auto"
+      className="w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:mt-40"
     >
       <section className="w-1/2 h-full flex items-center justify-end allIL:justify-center allEMT:w-screen allEMT:h-2/5">
         <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allLM:h-[705px] allEMT:text-center allEMT:my-14">
