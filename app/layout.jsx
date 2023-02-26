@@ -11,8 +11,8 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body className="dark:bg-black">
-        <Nav />
         <div className="alphaContainer allIL:h-auto">
+          <Nav />
           {children}
           <Footer />
         </div>

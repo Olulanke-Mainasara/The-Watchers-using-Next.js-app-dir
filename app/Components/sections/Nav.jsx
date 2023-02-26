@@ -8,12 +8,14 @@ import { categories } from '../data/Arrays'
 
 function Nav() {
     const [navMenu, setMenu] = useState("allIL:-right-full")
-    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset ? window.pageYOffset : 0);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [prevScrollCounter, setPrevScrollCounter] = useState(0);
     const [visible, setVisible] = useState(true);
     const [themeIcon, setThemeIcon] = useState(faSun)
 
     function setTheTheme() {
-      if (document.documentElement.classList.contains("light")) {
+      if (document.documentElement.classList.contains("light")) 
+      {
         document.documentElement.classList.remove("light");
         document.documentElement.classList.add("dark");
         setThemeIcon(faSun);
@@ -25,13 +27,17 @@ function Nav() {
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        if (prevScrollCounter == 0) {
+            setPrevScrollPos(window.scrollY);
+            setPrevScrollCounter(prevValue => prevValue + 1)
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [prevScrollPos]);
 
     const handleScroll = () => {
         // Get the current scroll position
-        const currentScrollPos = window.pageYOffset;
+        const currentScrollPos = window.scrollY;
 
         // Check if the user is scrolling up or down
         if (currentScrollPos < prevScrollPos && !visible) {
@@ -64,9 +70,9 @@ function Nav() {
                 <li className="group relative">
                     <Link href="#" className="cursor-default allLM:text-2xl">Our categories  <FontAwesomeIcon icon={ faChevronDown } /></Link>
         
-                    <div id="dropList" className="absolute z-30 h-0 group-hover:h-[362px] -left-[45%] pt-[22px] duration-500 overflow-hidden">
+                    <div id="dropList" className="absolute z-30 h-0 group-hover:h-[500px] -left-[45%] pt-[22px] duration-500 overflow-hidden">
                         <ul className="border rounded-xl text-center w-60 bg-black dark:bg-white dark:text-black overflow-hidden">
-                            {categories.map(category => <li key={category.id} className="w-full py-4 px-3 hover:bg-gray-800 duration-500"><Link href="#" className="py-4 px-[26px]">{category.title}</Link></li>)}
+                            {categories.map(category => <li key={category.id} className="w-full py-4 px-3 hover:bg-black duration-500 dark:hover:text-white"><Link href="#" className="py-4 px-[26px]">{category.title}</Link></li>)}
                         </ul>
                     </div>
                 </li>
