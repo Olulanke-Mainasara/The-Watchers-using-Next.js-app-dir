@@ -42,14 +42,18 @@ function NewsCarousel() {
   const newsWithControls = useMemo(() => <News controls={controls} />, [])
 
   return (
-    <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-28">
+    <section
+      style={{ scrollSnapAlign: "start" }}
+      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-28"
+      id="news"
+    >
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Today's Featured Articles
       </h1>
 
       <div className="relative w-screen h-[500px] 2xl:h-[650px] lg:h-[350px] md:h-[800px] allT:h-[420px] flex items-center overflow-x-hidden">
-        <LeftArrow onclick={ prevNews }/>
-        <RightArrow onclick={ nextNews }/>
+        <LeftArrow onclick={prevNews} />
+        <RightArrow onclick={nextNews} />
 
         {newsWithControls}
       </div>

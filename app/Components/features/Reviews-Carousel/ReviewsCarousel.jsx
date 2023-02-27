@@ -55,13 +55,13 @@ function ReviewsCarousel() {
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-32"
+      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-28"
     >
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Reviews
       </h1>
 
-      <div className="relative w-screen h-[420px] flex items-center overflow-x-hidden">
+      <div className="relative w-screen h-[420px] allEMT:h-[330px] flex items-center overflow-x-hidden">
         <LeftArrow onclick={prevItem} />
         <RightArrow onclick={nextItem} />
 

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState, useMemo } from 'react'
+import { Element } from 'react-scroll';
 import { useAnimation } from 'framer-motion';
 import { categories } from '../../data/Arrays'
 import Categories from './Categories'
@@ -56,19 +57,22 @@ function CategoriesCarousel() {
   const categoriesWithControls = useMemo(() => <Categories controls={controls} />, []);
 
   return (
-    <section style={{ scrollSnapAlign: "start" }} className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-36">
-      <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
-        Our Categories
-      </h1>
+      <section
+        style={{ scrollSnapAlign: "start" }}
+        className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-36"
+      >
+        <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
+          Our Categories
+        </h1>
 
-      <div className="relative w-screen h-[550px] allT:h-[420px] flex items-center overflow-x-hidden">
-        <LeftArrow onclick={ prevItem }/>
-        <RightArrow onclick={ nextItem }/>
+        <div className="relative w-screen h-[550px] allT:h-[420px] flex items-center overflow-x-hidden">
+          <LeftArrow onclick={prevItem} />
+          <RightArrow onclick={nextItem} />
 
-        {categoriesWithControls}
-      </div>
-    </section>
-  )
+          {categoriesWithControls}
+        </div>
+      </section>
+  );
 }
 
 export default CategoriesCarousel

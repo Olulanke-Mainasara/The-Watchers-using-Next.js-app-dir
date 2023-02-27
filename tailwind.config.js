@@ -11,35 +11,35 @@ module.exports = {
   darkMode: "class",
   theme: {
     screens: {
-      xtraSmall: { min: "0px", max: "319px" },
-      // => @media (min-width: 0px and max-width: 319px) { ... }
+      xtraSmall: { min: "0px" },
+      // => @media (min-width: 0px) { ... }
 
-      iphone5: { min: "320px", max: "321px" },
-      // => @media (min-width: 320px and max-width: 321px) { ... }
+      iphone5: { min: "320px" },
+      // => @media (min-width: 320px) { ... }
 
       allT: { max: "321px" },
-      // => @media (min-width: 0px and max-width: 321px) { ... }
+      // => @media (max-width: 321px) { ... }
 
-      xs: { min: "322px", max: "389px" },
-      // => @media (min-width: 322px and max-width: 389px) { ... }
+      xs: { min: "322px" },
+      // => @media (min-width: 322px) { ... }
 
-      sm: { min: "390px", max: "767px" },
-      // => @media (min-width: 390px and max-width: 767px) { ... }
+      sm: { min: "390px" },
+      // => @media (min-width: 390px) { ... }
 
       allEM: { min: "322px", max: "767px" },
       // => @media (min-width: 322px and max-width: 767px) { ... }
 
-      allEMT: { min: "0px", max: "767px" },
-      // => @media (min-width: 322px and max-width: 767px) { ... }
+      allEMT: { max: "767px" },
+      // => @media (max-width: 767px) { ... }
 
-      md: { min: "768px", max: "1023px" },
-      // => @media (min-width: 768px and max-width: 1023px) { ... }
+      md: { min: "768px" },
+      // => @media (min-width: 768px) { ... }
 
       allM: { max: "1023px" },
       // => @media (max-width: 1023px) { ... }
 
-      lg: { min: "1024px", max: "1309px" },
-      // => @media (min-width: 1024px and max-width: 1309px) { ... }
+      lg: { min: "1024px" },
+      // => @media (min-width: 1024px) { ... }
 
       allLM: { min: "768px", max: "1309px" },
       // => @media (min-width: 1024px and max-width: 1309px) { ... }
@@ -47,8 +47,8 @@ module.exports = {
       allIL: { max: "1309px" },
       // => @media (max-width: 1309px) { ... }
 
-      xl: { min: "1310px", max: "1535px" },
-      // => @media (min-width: 1310px and max-width: 1535px) { ... }
+      xl: { min: "1310px" },
+      // => @media (min-width: 1310px) { ... }
 
       "2xl": { min: "1536px" },
       // => @media (min-width: 1536px) { ... }

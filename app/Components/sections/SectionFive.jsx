@@ -8,8 +8,8 @@ function SectionFive() {
       style={{ scrollSnapAlign: "start" }}
       className="w-full h-screen flex allEMT:flex-col allIL:h-auto"
     >
-      <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-extraHeight">
-        <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-4/5">
+      <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-[440px]">
+        <div className="relative w-3/5 h-3/4 allLM:h-[555px] allEMT:h-full allIL:w-4/5 allM:max-w-[310px]">
           <Image
             src="/Section3.JPG"
             fill

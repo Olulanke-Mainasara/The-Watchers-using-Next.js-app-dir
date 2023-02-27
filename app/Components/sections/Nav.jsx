@@ -66,9 +66,9 @@ function Nav() {
             <Link href="#" className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 allT:text-lg allIL:hover:after:w-0"><img src="/The Universe 2.jpg" className="w-10 h-10 rounded-full" alt="The Watchers Logo"/><span>The Watchers.</span></Link>
        
             <ul className={`flex items-center text-white gap-20 allIL:absolute allIL:top-0 allIL:h-screen allIL:w-full allIL:flex-col allIL:justify-center allEMT:gap-12 allIL:bg-black duration-500 ${navMenu}`}>
-                <li><Link href="#" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:bg-white after:duration-500 after:content-[''] after:scale-x-110">Home</Link></li>
+                <li><Link href="/" className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:bg-white after:duration-500 after:content-[''] after:scale-x-110">Home</Link></li>
                 <li className="group relative">
-                    <Link href="#" className="cursor-default allLM:text-2xl">Our categories  <FontAwesomeIcon icon={ faChevronDown } /></Link>
+                    <button className="cursor-default allLM:text-2xl">Our categories  <FontAwesomeIcon icon={ faChevronDown } /></button>
         
                     <div id="dropList" className="absolute z-30 h-0 group-hover:h-[500px] -left-[45%] pt-[22px] duration-500 overflow-hidden">
                         <ul className="border rounded-xl text-center w-60 bg-black dark:bg-white dark:text-black overflow-hidden">
@@ -84,7 +84,7 @@ function Nav() {
                 <button title="Theme" onClick={ setTheTheme } className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white xl:hidden 2xl:hidden"><FontAwesomeIcon icon={ themeIcon } /></button>            
 
                 <div className="flex gap-10 allT:gap-5 items-center xl:hidden 2xl:hidden">
-                    <button title="Start reading" className="rounded-3xl bg-white px-7 py-3 text-black text-2xl transition-colors duration-300 allEMT:text-base">Start reading</button>
+                    <button title="Start reading" className="rounded-3xl bg-white px-5 py-3 text-black text-3xl transition-colors duration-300 allEMT:text-lg">Start reading</button>
 
                     <button type="Log in" className='py-2 px-3 allLM:text-2xl text-white'>Log in <FontAwesomeIcon icon={ faArrowRight } /></button>
                 </div>
