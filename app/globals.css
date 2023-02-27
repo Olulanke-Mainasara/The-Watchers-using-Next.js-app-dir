@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 .alphaContainer {
-  max-width: 1920px;
   margin: auto;
   height: 100vh;
   scroll-snap-type: y mandatory;

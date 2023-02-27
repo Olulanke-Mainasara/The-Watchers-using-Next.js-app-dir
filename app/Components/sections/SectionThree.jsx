@@ -42,14 +42,14 @@ function SectionThree() {
         </div>
       </section>
 
-      <section className="w-1/2 h-full flex items-center justify-center allLM:justify-start allEMT:w-screen allEMT:h-extraHeight">
-        <div className="relative w-3/5 h-3/4 allEMT:h-full allLM:w-[90%] allLM:h-[705px] allEMT:w-4/5">
+      <section className="w-1/2 h-full flex items-center justify-center allLM:justify-start allEMT:w-screen allEMT:h-[450px]">
+        <div className="relative w-3/5 max-w-[595px] h-3/4 allEMT:h-full allLM:w-[90%] allLM:h-[705px] allEM:w-[310px] allT:w-[252px]">
           <Image
             src="/Section2a.JPG"
             width={500}
             height={800}
             blur="true"
-            className="absolute w-3/5 md:w-4/5 h-3/5 border border-black dark:border-white rounded-2xl top-0 left-0"
+            className="absolute w-3/5 md:w-4/5 h-3/5 border border-black dark:border-white rounded-2xl top-0 left-0 allEMT:min-h-[250px]"
             alt=""
           />
           <Image
@@ -57,7 +57,7 @@ function SectionThree() {
             width={500}
             height={800}
             blur="true"
-            className="absolute w-3/5 md:w-4/5 h-3/5 border rounded-2xl bottom-0 right-0"
+            className="absolute w-3/5 md:w-4/5 h-3/5 border rounded-2xl bottom-0 right-0 allEMT:min-h-[250px]"
             alt=""
           />
         </div>

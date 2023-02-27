@@ -61,7 +61,7 @@ function ReviewsCarousel() {
         Reviews
       </h1>
 
-      <div className="relative w-screen h-[420px] allEMT:h-[330px] flex items-center overflow-x-hidden">
+      <div className="relative w-screen h-[330px] flex items-center overflow-x-hidden">
         <LeftArrow onclick={prevItem} />
         <RightArrow onclick={nextItem} />
 

@@ -44,7 +44,7 @@ function NewsCarousel() {
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-28"
+      className="w-screen h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-28"
       id="news"
     >
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
