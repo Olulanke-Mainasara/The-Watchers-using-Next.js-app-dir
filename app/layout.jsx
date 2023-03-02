@@ -1,6 +1,7 @@
 import "./globals.css";
 import Nav from "./Components/sections/Nav";
 import Footer from "./Components/sections/Footer";
+import Splash from "./Components/features/Splash";
 
 export default function RootLayout({ children }) {
   return (
@@ -12,9 +13,11 @@ export default function RootLayout({ children }) {
       <head />
       <body className="dark:bg-black">
         <div className="alphaContainer allIL:h-auto">
-          <Nav />
-          {children}
-          <Footer />
+          <Splash>
+            <Nav />
+            {children}
+            <Footer />
+          </Splash>
         </div>
       </body>
     </html>
