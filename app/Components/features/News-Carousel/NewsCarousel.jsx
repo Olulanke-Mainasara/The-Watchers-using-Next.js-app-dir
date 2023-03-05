@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { useAnimation } from 'framer-motion';
-import { news } from '../../data/Arrays';
-import News from './News';
-import { LeftArrow, RightArrow } from '../../UI/Arrows';
+import React, { useState, useEffect, useMemo } from "react";
+import { useAnimation } from "framer-motion";
+import { news } from "../../data/Arrays";
+import News from "./News";
+import { LeftArrow, RightArrow } from "../../UI/Arrows";
 
 function NewsCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,12 +15,12 @@ function NewsCarousel() {
   useEffect(() => {
     setWidth(window.innerWidth);
     window.addEventListener("resize", () => setWidth(window.innerWidth));
-    return () => window.removeEventListener("resize", () => setWidth(window.innerWidth));
-  }, []);
+    const interval = setInterval(nextNews, 6000);
 
-  useEffect(() => {
-    const interval = setInterval(() => {setCurrentSlide(prevSlide => (prevSlide + 1) % news.length)}, 6000);
-    return () => clearInterval(interval);
+    return () => {
+      window.removeEventListener("resize", () => setWidth(window.innerWidth));
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -30,21 +30,20 @@ function NewsCarousel() {
     });
   }, [currentSlide]);
 
-
   function nextNews() {
-    setCurrentSlide(prevSlide => (prevSlide + 1) % news.length);
-  };
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % news.length);
+  }
 
   function prevNews() {
-    setCurrentSlide(prevSlide => (news.length + prevSlide - 1) % news.length);
-  };
+    setCurrentSlide((prevSlide) => (news.length + prevSlide - 1) % news.length);
+  }
 
-  const newsWithControls = useMemo(() => <News controls={controls} />, [])
+  const newsWithControls = useMemo(() => <News controls={controls} />, []);
 
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-screen h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allEMT:my-28"
+      className="w-screen h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-28"
       id="news"
     >
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
@@ -59,6 +58,6 @@ function NewsCarousel() {
       </div>
     </section>
   );
-};
+}
 
 export default NewsCarousel;

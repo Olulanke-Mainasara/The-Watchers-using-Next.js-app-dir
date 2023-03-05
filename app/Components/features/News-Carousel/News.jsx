@@ -14,7 +14,7 @@ function News({ controls }) {
             animate={controls}
             key={newsItem.id}
           >
-            <div className="w-[90%] max-w-[1920px] h-full overflow-hidden rounded-2xl mx-auto bg-black dark:bg-white flex items-center justify-center allM:flex-col">
+            <div className="w-[90%] max-w-[1920px] allEMT:max-w-[420px] h-full overflow-hidden rounded-2xl mx-auto bg-black dark:bg-white flex items-center justify-center allM:flex-col">
               <div className="relative basis-3/4 md:basis-1/2 allEM:basis-2/5 allT:basis-2/5 w-full h-full">
                 <Image
                   src={newsItem.imgsrc}

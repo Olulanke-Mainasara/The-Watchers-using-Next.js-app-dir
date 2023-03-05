@@ -9,8 +9,8 @@ function SectionThree() {
       className="w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:mt-40"
     >
       <section className="w-1/2 h-full flex items-center justify-end allIL:justify-center allEMT:w-screen allEMT:h-2/5">
-        <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allLM:h-[705px] allEMT:text-center allEMT:my-14">
-          <h1 className="text-5xl 2xl:text-7xl md:text-3xl allT:text-3xl">
+        <div className="w-4/5 h-3/5 flex flex-col justify-center gap-7 dark:text-white allLM:h-[705px] allEMT:my-14">
+          <h1 className="text-5xl 2xl:text-7xl md:text-3xl allEM:text-4xl allEM:text-center allT:text-3xl">
             We inspire, no matter the reader
           </h1>
 
@@ -48,7 +48,7 @@ function SectionThree() {
             src="/Section2a.JPG"
             width={500}
             height={800}
-            priority 
+            priority
             blur="true"
             className="absolute w-3/5 md:w-4/5 h-3/5 border border-black dark:border-white rounded-2xl top-0 left-0 allEMT:min-h-[250px]"
             alt=""
@@ -57,7 +57,7 @@ function SectionThree() {
             src="/Section2b.JPG"
             width={500}
             height={800}
-            priority 
+            priority
             blur="true"
             className="absolute w-3/5 md:w-4/5 h-3/5 border rounded-2xl bottom-0 right-0 allEMT:min-h-[250px]"
             alt=""

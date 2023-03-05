@@ -1,65 +1,92 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState, useMemo } from 'react'
-import { Element } from 'react-scroll';
-import { useAnimation } from 'framer-motion';
-import { categories } from '../../data/Arrays'
-import Categories from './Categories'
-import { LeftArrow, RightArrow } from '../../UI/Arrows'
+import React, { useEffect, useState, useMemo } from "react";
+import { useAnimation } from "framer-motion";
+import { categories } from "../../data/Arrays";
+import Categories from "./Categories";
+import { LeftArrow, RightArrow } from "../../UI/Arrows";
 
 function CategoriesCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [width, setWidth] = useState(0);
   const [recoil, setRecoil] = useState(0);
 
-  useEffect(() => {
-    setWidth(window.innerWidth <= 767 ? window.innerWidth : 460)
-    setRecoil(window.innerWidth <= 1023 ? 1 : window.innerWidth > 1023 & window.innerWidth < 1310 ? 2 : window.innerWidth >= 1310 & window.innerWidth < 1536 ? 3 : 4)
-
-    window.addEventListener("resize", () => {
-      setWidth(window.innerWidth <= 767 ? window.innerWidth : 460)
-      setRecoil(window.innerWidth <= 1023 ? 1 : window.innerWidth > 1023 & window.innerWidth < 1310 ? 2 : window.innerWidth >= 1310 & window.innerWidth < 1536 ? 3 : 4)
-    });
-
-    return () => window.removeEventListener("resize", () => {
-      setWidth(window.innerWidth <= 767 ? window.innerWidth : 460)
-      setRecoil(window.innerWidth <= 1023 ? 1 : window.innerWidth > 1023 & window.innerWidth < 1310 ? 2 : window.innerWidth >= 1310 & window.innerWidth < 1536 ? 3 : 4)
-    });
-  }, []);
-
   const controls = useAnimation();
 
   useEffect(() => {
-      controls.start({
+    setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
+    setRecoil(
+      window.innerWidth <= 1023
+        ? 1
+        : (window.innerWidth > 1023) & (window.innerWidth < 1310)
+        ? 2
+        : (window.innerWidth >= 1310) & (window.innerWidth < 1536)
+        ? 3
+        : 4
+    );
+
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
+      setRecoil(
+        window.innerWidth <= 1023
+          ? 1
+          : (window.innerWidth > 1023) & (window.innerWidth < 1310)
+          ? 2
+          : (window.innerWidth >= 1310) & (window.innerWidth < 1536)
+          ? 3
+          : 4
+      );
+    });
+
+    return () =>
+      window.removeEventListener("resize", () => {
+        setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
+        setRecoil(
+          window.innerWidth <= 1023
+            ? 1
+            : (window.innerWidth > 1023) & (window.innerWidth < 1310)
+            ? 2
+            : (window.innerWidth >= 1310) & (window.innerWidth < 1536)
+            ? 3
+            : 4
+        );
+      });
+  }, []);
+
+  useEffect(() => {
+    controls.start({
       x: -currentSlide * width,
       transition: { duration: 0.7 },
-      });
+    });
   }, [currentSlide]);
 
   function nextItem() {
-    setCurrentSlide(prevSlide => {
-    if (prevSlide === categories.length - recoil) {
+    setCurrentSlide((prevSlide) => {
+      if (prevSlide === categories.length - recoil) {
         return 0;
-    }
-    return prevSlide + 1;
+      }
+      return prevSlide + 1;
     });
   }
 
   function prevItem() {
-    setCurrentSlide(prevSlide => {
-    if (prevSlide === 0) {
+    setCurrentSlide((prevSlide) => {
+      if (prevSlide === 0) {
         return categories.length - recoil;
-    }
-    return prevSlide - 1;
+      }
+      return prevSlide - 1;
     });
   }
 
-  const categoriesWithControls = useMemo(() => <Categories controls={controls} />, []);
+  const categoriesWithControls = useMemo(
+    () => <Categories controls={controls} />,
+    []
+  );
 
   return (
     <section
       style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allLM:h-auto allLM:my-64 allEMT:my-36"
+      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-40"
     >
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Our Categories
@@ -75,4 +102,4 @@ function CategoriesCarousel() {
   );
 }
 
-export default CategoriesCarousel
+export default CategoriesCarousel;

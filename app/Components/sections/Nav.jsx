@@ -62,7 +62,7 @@ function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 ${
+      className={`fixed top-0 left-0 z-40 ${
         visible ? "" : "allIL:opacity-0"
       } allIL:duration-300 h-16 w-screen bg-black dark:bg-gray-800/0 backdrop-blur-lg`}
     >
@@ -165,7 +165,7 @@ function Nav() {
 
         <button
           title="Search"
-          className="xl:hidden 2xl:hidden w-10 h-10 rounded-full flex items-center justify-center text-xl text-white duration-500 lg:hover:bg-transparent"
+          className="xl:hidden 2xl:hidden w-10 h-10 flex items-center justify-center text-xl text-white"
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>

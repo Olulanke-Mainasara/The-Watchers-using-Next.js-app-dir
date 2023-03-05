@@ -14,7 +14,7 @@ function Categories({ controls }) {
             animate={controls}
             key={categoriesItem.id}
           >
-            <div className="w-full allEMT:w-[90%] allEMT:mx-auto h-full rounded-2xl bg-black dark:bg-white flex flex-col items-center justify-center overflow-hidden">
+            <div className="w-full allEMT:w-[90%] allEMT:max-w-[420px] allEMT:mx-auto h-full rounded-2xl bg-black dark:bg-white flex flex-col items-center justify-center overflow-hidden">
               <div className="relative basis-[40%] w-full h-full">
                 <Image
                   src={categoriesItem.imgsrc}
@@ -30,7 +30,7 @@ function Categories({ controls }) {
                 <h5 className="text-3xl allT:text-2xl">
                   {categoriesItem.title}
                 </h5>
-                <p className="text-base allT:text-sm">{categoriesItem.text}</p>
+                <p className="text-base allT:text-xs">{categoriesItem.text}</p>
                 <CardButton text={"View"} />
               </div>
             </div>

@@ -25,8 +25,8 @@ function SectionFive() {
       </section>
 
       <section className="w-1/2 h-full flex items-center justify-start allIL:justify-center allEMT:w-screen allEMT:h-2/5 allEMT:py-14">
-        <div className="w-4/5 allLM:h-[555px] flex flex-col justify-center gap-7 dark:text-white allEMT:text-center">
-          <h1 className="text-5xl 2xl:text-7xl md:text-3xl allT:text-3xl">
+        <div className="w-4/5 allLM:h-[555px] flex flex-col justify-center gap-7 dark:text-white">
+          <h1 className="text-5xl 2xl:text-7xl md:text-3xl allEM:text-4xl allEM:text-center allT:text-3xl">
             Feed your curiosity, no matter where you are
           </h1>
 
@@ -42,15 +42,15 @@ function SectionFive() {
           </p>
 
           <div className="flex justify-between">
-            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-2xl allT:after:text-sm after:content-['Downloads']">
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Downloads']">
               520K+
             </p>
 
-            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-2xl allT:after:text-sm after:content-['Reads-Day']">
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Reads-Day']">
               400K+
             </p>
 
-            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-4xl allT:text-2xl allT:after:text-sm after:content-['Dailies']">
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Dailies']">
               10+
             </p>
           </div>
