@@ -128,7 +128,7 @@ export const footerlinks = [
     id: 1,
     title: "Company",
     linkOne: "About",
-    linkTwo: "Blog",
+    linkTwo: "FAQs",
     linkThree: "Press",
     linkFour: "Jobs",
   },
