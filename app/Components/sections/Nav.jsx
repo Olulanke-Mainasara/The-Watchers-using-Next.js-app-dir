@@ -1,64 +1,69 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faBars, faChevronDown, faClose, faMoon, faSearch, faSun } from '@fortawesome/free-solid-svg-icons'
-import { categories } from '../data/Arrays'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faChevronRight,
+  faClose,
+  faMoon,
+  faSearch,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
-    const [navMenu, setMenu] = useState("allIL:-right-full")
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [prevScrollCounter, setPrevScrollCounter] = useState(0);
-    const [visible, setVisible] = useState(true);
-    const [themeIcon, setThemeIcon] = useState(faSun)
+  const [navMenu, setMenu] = useState("allIL:-right-full");
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [prevScrollCounter, setPrevScrollCounter] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [themeIcon, setThemeIcon] = useState(faSun);
 
-    function setTheTheme() {
-      if (document.documentElement.classList.contains("light")) 
-      {
-        document.documentElement.classList.remove("light");
-        document.documentElement.classList.add("dark");
-        setThemeIcon(faSun);
-      } else {
-        document.documentElement.classList.remove("dark");
-        document.documentElement.classList.add("light");
-        setThemeIcon(faMoon);
-      }
+  function setTheTheme() {
+    if (document.documentElement.classList.contains("light")) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      setThemeIcon(faSun);
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      setThemeIcon(faMoon);
+    }
+  }
+
+  useEffect(() => {
+    if (prevScrollCounter == 0) {
+      setPrevScrollPos(window.scrollY);
+      setPrevScrollCounter((prevValue) => prevValue + 1);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
+  const handleScroll = () => {
+    // Get the current scroll position
+    const currentScrollPos = window.scrollY;
+
+    // Check if the user is scrolling up or down
+    if (currentScrollPos < prevScrollPos && !visible) {
+      // The user is scrolling up
+      setVisible(true);
+    } else if (currentScrollPos > prevScrollPos && visible) {
+      // The user is scrolling down
+      setVisible(false);
     }
 
-    useEffect(() => {
-        if (prevScrollCounter == 0) {
-            setPrevScrollPos(window.scrollY);
-            setPrevScrollCounter(prevValue => prevValue + 1)
-        }
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [prevScrollPos]);
+    // Update the previous scroll position
+    setPrevScrollPos(currentScrollPos);
+  };
 
-    const handleScroll = () => {
-        // Get the current scroll position
-        const currentScrollPos = window.scrollY;
+  function openMenu() {
+    setMenu("allIL:right-0");
+  }
 
-        // Check if the user is scrolling up or down
-        if (currentScrollPos < prevScrollPos && !visible) {
-            // The user is scrolling up
-            setVisible(true);
-        } else if (currentScrollPos > prevScrollPos && visible) {
-            // The user is scrolling down
-            setVisible(false);
-        }
-
-        // Update the previous scroll position
-        setPrevScrollPos(currentScrollPos);
-    };
-    
-    function openMenu() {
-        setMenu("allIL:right-0")
-    }
-
-    function closeMenu() {
-        setMenu("allIL:-right-full")
-    }
+  function closeMenu() {
+    setMenu("allIL:-right-full");
+  }
 
   return (
     <nav
@@ -68,7 +73,7 @@ function Nav() {
     >
       <div className="h-full mx-auto flex items-center justify-between px-10 sm:px-5 xs:px-3 iphone5:px-3 xtraSmall:px-2">
         <Link
-          href="#"
+          href="/"
           className="flex items-center text-2xl text-white transition-colors duration-700 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-700 after:content-[''] hover:text-gray-400 hover:after:scale-x-100 allT:text-lg allIL:hover:after:w-0"
         >
           <img
@@ -90,28 +95,13 @@ function Nav() {
               Home
             </Link>
           </li>
-          <li className="group relative">
-            <button className="cursor-default allLM:text-2xl">
-              Our categories <FontAwesomeIcon icon={faChevronDown} />
-            </button>
-
-            <div
-              id="dropList"
-              className="absolute z-30 h-0 group-hover:h-[500px] -left-[45%] pt-[22px] duration-500 overflow-hidden"
+          <li>
+            <Link
+              href="#"
+              className="relative allLM:text-2xl after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:duration-500 after:content-[''] hover:transition-transform hover:after:scale-x-110"
             >
-              <ul className="border rounded-xl text-center w-60 bg-black dark:bg-white dark:text-black overflow-hidden">
-                {categories.map((category) => (
-                  <li
-                    key={category.id}
-                    className="w-full py-4 px-3 hover:bg-black duration-500 dark:hover:text-white"
-                  >
-                    <Link href="#" className="py-4 px-[26px]">
-                      {category.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              Our categories
+            </Link>
           </li>
           <li>
             <Link
@@ -158,7 +148,7 @@ function Nav() {
               type="Log in"
               className="py-2 px-3 allLM:text-2xl text-white allEMT:text-lg"
             >
-              Log in <FontAwesomeIcon icon={faArrowRight} />
+              Log in <FontAwesomeIcon icon={faChevronRight} />
             </button>
           </div>
         </ul>
@@ -198,7 +188,7 @@ function Nav() {
             type="Log in"
             className="py-2 px-3 text-white hover:text-black hover:bg-white duration-500 rounded-lg"
           >
-            Log in <FontAwesomeIcon icon={faArrowRight} />
+            Log in <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </div>
@@ -206,4 +196,4 @@ function Nav() {
   );
 }
 
-export default Nav
+export default Nav;

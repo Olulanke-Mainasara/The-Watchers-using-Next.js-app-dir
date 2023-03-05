@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function Hero() {
   return (
@@ -30,7 +30,7 @@ function Hero() {
             className="w-fit px-7 py-4 text-white text-2xl allEMT:text-lg allEM:pr-0"
             title="Today's Articles"
           >
-            Today's articles <FontAwesomeIcon icon={faArrowRight} />
+            Today's articles <FontAwesomeIcon icon={faChevronRight} />
           </a>
         </div>
       </div>
