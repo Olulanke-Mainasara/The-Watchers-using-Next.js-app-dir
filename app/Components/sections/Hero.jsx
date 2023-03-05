@@ -7,7 +7,6 @@ function Hero() {
   return (
     <header
       id="hero"
-      style={{ scrollSnapAlign: "start" }}
       className="flex h-screen items-center bg-[url(/Header.jpeg)] bg-cover allIL:bg-bottom"
     >
       <div className="w-full h-full justify-center flex flex-col gap-8 backdrop-brightness-50 text-center">

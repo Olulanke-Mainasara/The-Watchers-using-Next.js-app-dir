@@ -5,9 +5,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-.alphaContainer {
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}

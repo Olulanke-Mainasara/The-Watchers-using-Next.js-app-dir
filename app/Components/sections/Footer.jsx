@@ -19,7 +19,6 @@ function Footer() {
 
   return (
     <footer
-      style={{ scrollSnapAlign: "start" }}
       className="w-full h-[70vh] flex flex-col px-10 bg-gray-800 text-white allIL:h-fit allEM:px-8 allT:px-6"
     >
       <section className="flex gap-10 allIL:gap-0 basis-4/5 allIL:flex-col">

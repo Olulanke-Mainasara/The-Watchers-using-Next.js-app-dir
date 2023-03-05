@@ -5,7 +5,6 @@ import Button from '../UI/Button'
 function SectionOne() {
   return (
     <section
-      style={{ scrollSnapAlign: "start" }}
       className="w-full h-screen flex allEMT:flex-col allIL:h-auto allIL:mt-16 allLM:mb-36"
     >
       <section className="w-1/2 h-full flex items-center justify-center allEMT:w-screen allEMT:h-[440px]">

@@ -5,7 +5,6 @@ import Link from "next/link";
 function SectionThree() {
   return (
     <section
-      style={{ scrollSnapAlign: "start" }}
       className="w-full h-screen flex allEMT:flex-col allIL:h-auto allLM:mt-40"
     >
       <section className="w-1/2 h-full flex items-center justify-end allIL:justify-center allEMT:w-screen allEMT:h-2/5">

@@ -7,12 +7,16 @@ import Splash from "./Components/features/Splash-Screen/Splash";
 import { useEffect, useState } from "react";
 
 export default function RootLayout({ children }) {
-  const [height, setHeight] = useState("");
+  const [height, setHeight] = useState("h-screen overflow-hidden");
+  const [display, setDisplay] = useState("flex");
 
   useEffect(() => {
-    const timeOut = setTimeout(setHeight("allIL:h-auto"), 2100);
+    const timeOut = setTimeout(() => {
+      setHeight("h-auto overflow-scroll");
+      setDisplay("hidden");
+    }, 2700);
     return () => clearTimeout(timeOut);
-  }, []);
+  }, [height, display]);
 
   return (
     <html lang="en" className="dark">
@@ -22,8 +26,8 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body className="dark:bg-black">
-        <div className={`alphaContainer overflow-hidden ${height}`}>
-          <Splash />
+        <div className={`${height}`}>
+          <Splash display={display} />
           <Nav />
           {children}
           <Footer />
