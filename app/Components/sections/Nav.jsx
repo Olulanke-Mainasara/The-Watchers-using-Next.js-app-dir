@@ -123,7 +123,7 @@ function Nav() {
           <button
             title="Close navigation menu"
             onClick={closeMenu}
-            className="text-white text-3xl absolute top-14 iphone5:top-7 left-1/2 -translate-x-1/2 xl:hidden 2xl:hidden"
+            className="text-white text-3xl absolute top-14 iphone5:top-7 left-1/2 -translate-x-1/2 laptop:hidden"
           >
             <FontAwesomeIcon icon={faClose} />
           </button>
@@ -131,12 +131,12 @@ function Nav() {
           <button
             title="Theme"
             onClick={setTheTheme}
-            className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white xl:hidden 2xl:hidden"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white laptop:hidden"
           >
             <FontAwesomeIcon icon={themeIcon} />
           </button>
 
-          <div className="flex gap-10 allT:gap-5 items-center xl:hidden 2xl:hidden">
+          <div className="flex gap-10 allT:gap-5 items-center laptop:hidden">
             <button
               title="Start reading"
               className="rounded-3xl bg-white px-5 py-3 text-black text-3xl transition-colors duration-300 allEMT:text-lg"
@@ -155,7 +155,7 @@ function Nav() {
 
         <button
           title="Search"
-          className="xl:hidden 2xl:hidden w-10 h-10 flex items-center justify-center text-xl text-white"
+          className="laptop:hidden w-10 h-10 flex items-center justify-center text-xl text-white"
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
@@ -163,7 +163,7 @@ function Nav() {
         <button
           title="Open navigation menu"
           onClick={openMenu}
-          className="xl:hidden 2xl:hidden text-white text-2xl"
+          className="laptop:hidden text-white text-2xl"
         >
           <FontAwesomeIcon icon={faBars} />
         </button>

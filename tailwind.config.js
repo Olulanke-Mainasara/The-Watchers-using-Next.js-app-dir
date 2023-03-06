@@ -47,14 +47,11 @@ module.exports = {
       allIL: { max: "1279px" },
       // => @media (max-width: 1309px) { ... }
 
-      xl: { min: "1280px", max: "1535px" },
-      // => @media (min-width: 1310px and max-width: 1535px) { ... }
+      "laptop": { min: "1280px" },
+      // => @media (min-width: 1310px) { ... }
 
       "2xl": { min: "1536px" },
       // => @media (min-width: 1536px) { ... }
-
-      ultraWide: { min: "2001px" },
-      // => @media (min-width: 2001px) { ... }
     },
   },
   future: {

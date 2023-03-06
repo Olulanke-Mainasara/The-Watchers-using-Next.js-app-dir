@@ -23,7 +23,7 @@ function Footer() {
     >
       <section className="flex gap-10 allIL:gap-0 basis-4/5 allIL:flex-col">
         <section className="flex flex-col h-full justify-center basis-1/2 allLM:flex-row allLM:items-center allLM:border-white allIL:border-b allLM:py-8">
-          <div className="flex h-full flex-col justify-center gap-6 allIL:basis-1/2 border-slate-100 border-b allLM:border-b-0 allEM:py-8 allT:py-8">
+          <div className="flex h-full flex-col justify-center gap-6 allIL:basis-1/2 border-slate-100 border-b allLM:border-b-0 allEMT:py-8">
             <a href="#hero" className="w-fit mx-auto">
               <img
                 className="w-10 h-10 rounded-full"
@@ -40,7 +40,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className="h-full flex flex-col gap-5 justify-center allEM:py-8 allT:py-8">
+          <div className="h-full flex flex-col gap-5 justify-center allEMT:py-8">
             <p className="text-xl 2xl:text-2xl">Subscribe to our newsletter</p>
             <p className="block text-slate-00">
               The latest news, articles, and resources, sent to your inbox
@@ -48,7 +48,7 @@ function Footer() {
             </p>
             <form
               onSubmit={handleSubmit}
-              className="flex gap-5 allEM:flex-col allT:flex-col"
+              className="flex gap-5 allEMT:flex-col"
             >
               <input
                 type="text"
@@ -57,7 +57,7 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="py-2 px-3 bg-white text-gray-800 hover:bg-gray-800 hover:text-white border duration-500 rounded-lg allEM:w-fit allT:w-fit allEM:mx-auto allT:mx-auto"
+                className="py-2 px-3 bg-white text-gray-800 hover:bg-gray-800 hover:text-white border duration-500 rounded-lg allEMT:w-fit allEMT:mx-auto"
               >
                 Subscribe
               </button>
