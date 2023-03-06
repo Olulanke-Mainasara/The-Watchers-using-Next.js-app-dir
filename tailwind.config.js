@@ -38,13 +38,13 @@ module.exports = {
       allM: { max: "1023px" },
       // => @media (max-width: 1023px) { ... }
 
-      lg: { min: "1024px", max: "1309px" },
+      lg: { min: "1024px", max: "1279px" },
       // => @media (min-width: 1024px and max-width: 1309px) { ... }
 
-      allLM: { min: "768px", max: "1309px" },
+      allLM: { min: "768px", max: "1279px" },
       // => @media (min-width: 1024px and max-width: 1309px) { ... }
 
-      allIL: { max: "1309px" },
+      allIL: { max: "1279px" },
       // => @media (max-width: 1309px) { ... }
 
       xl: { min: "1310px", max: "1535px" },
