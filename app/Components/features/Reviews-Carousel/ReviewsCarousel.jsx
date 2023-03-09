@@ -1,79 +1,18 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
-import { useAnimation } from "framer-motion";
-import { reviews } from "../../data/Arrays";
+import React, { useEffect, useMemo } from "react";
 import Reviews from "./Reviews";
+import useCustomWidthCarousel from "../../hooks/useCustomWidthCarousel";
+import { reviews } from "../../data/Arrays";
 import { LeftArrow, RightArrow } from "../../UI/Arrows";
 
 function ReviewsCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [width, setWidth] = useState(0);
-  const [recoil, setRecoil] = useState(0);
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
-    setRecoil(
-      window.innerWidth <= 1023
-        ? 1
-        : window.innerWidth > 1023 && window.innerWidth < 1310
-        ? 2
-        : window.innerWidth >= 1310 && window.innerWidth < 1536
-        ? 3
-        : 4
-    );
-
-    function handleResize() {
-      setWidth(window.innerWidth <= 767 ? window.innerWidth : 460);
-      setRecoil(
-        window.innerWidth <= 1023
-          ? 1
-          : window.innerWidth > 1023 && window.innerWidth < 1310
-          ? 2
-          : window.innerWidth >= 1310 && window.innerWidth < 1536
-          ? 3
-          : 4
-      );
-    }
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const { controls, recoil, nextItem, prevItem } = useCustomWidthCarousel(reviews);
 
   useEffect(() => {
     const interval = setInterval(nextItem, 6000);
-
-    controls.start({
-      x: -currentSlide * width,
-      transition: { duration: 0.7 },
-    });
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentSlide, recoil, controls, width]);
-
-  function nextItem() {
-    setCurrentSlide((prevSlide) => {
-      if (prevSlide === reviews.length - recoil) {
-        return 0;
-      }
-      return prevSlide + 1;
-    });
-  }
-
-  function prevItem() {
-    setCurrentSlide((prevSlide) => {
-      if (prevSlide === 0) {
-        return reviews.length - recoil;
-      }
-      return prevSlide - 1;
-    });
-  }
+    return () => clearInterval(interval);
+  }, [controls, recoil]);
 
   const reviewsWithControls = useMemo(
     () => <Reviews controls={controls} />,
@@ -81,19 +20,15 @@ function ReviewsCarousel() {
   );
 
   return (
-    <section
-      style={{ scrollSnapAlign: "start" }}
-      className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-28"
-    >
+    <section className="w-full h-screen overflow-hidden flex flex-col gap-10 items-center justify-center text-center allIL:h-auto allLM:my-64 allEMT:my-28">
       <h1 className="dark:text-white text-8xl md:text-7xl allEM:text-5xl allT:text-3xl">
         Reviews
       </h1>
 
       <div className="relative w-screen h-[360px] flex items-center overflow-x-hidden">
         <LeftArrow onclick={prevItem} />
-        <RightArrow onclick={nextItem} />
-
         {reviewsWithControls}
+        <RightArrow onclick={nextItem} />
       </div>
     </section>
   );

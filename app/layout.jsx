@@ -1,22 +1,26 @@
 "use client";
 
-import "./globals.css";
+import { useEffect, useState } from "react";
 import Nav from "./Components/sections/Nav";
 import Footer from "./Components/sections/Footer";
 import Splash from "./Components/features/Splash-Screen/Splash";
-import { useEffect, useState } from "react";
+import Search from "./Components/features/Search/Search";
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   const [height, setHeight] = useState("h-screen overflow-hidden");
-  const [display, setDisplay] = useState("flex");
+  const [search, setSearch] = useState(false)
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
       setHeight("h-auto overflow-scroll");
-      setDisplay("hidden");
-    }, 2700);
+    }, 2500);
     return () => clearTimeout(timeOut);
-  }, [height, display]);
+  }, [height]);
+
+  function toggleSearch() {
+    setSearch(!search)
+  }
 
   return (
     <html lang="en" className="dark">
@@ -27,8 +31,9 @@ export default function RootLayout({ children }) {
       <head />
       <body className="dark:bg-black">
         <div className={`${height}`}>
-          <Splash display={display} />
-          <Nav />
+          <Splash />
+          {/* <Search search={search} /> */}
+          <Nav toggleSearch={toggleSearch} />
           {children}
           <Footer />
         </div>
