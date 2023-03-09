@@ -3,24 +3,20 @@
 import React from "react";
 import Link from "next/link";
 import useNavigationBar from "../hooks/useNavigationBar";
+import useStore from "../providers/navStore";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faSun,
+  faMoon,
   faBars,
   faChevronRight,
   faClose,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Nav({ toggleSearch }) {
-  const {
-    navMenu,
-    visible,
-    themeIcon,
-    setTheTheme,
-    openMenu,
-    closeMenu,
-    handleSearch,
-  } = useNavigationBar(toggleSearch);
+function Nav() {
+  const { navMenu, visible, openMenu, closeMenu } = useNavigationBar();
+  const { toggleSearch, dark, toggleDark } = useStore();
 
   return (
     <nav
@@ -87,10 +83,10 @@ function Nav({ toggleSearch }) {
 
           <button
             title="Theme"
-            onClick={setTheTheme}
+            onClick={toggleDark}
             className="w-10 h-10 rounded-full flex items-center justify-center text-xl allLM:text-3xl allLM:w-12 allLM:h-12 text-gray-800 bg-white laptop:hidden"
           >
-            <FontAwesomeIcon icon={themeIcon} />
+            <FontAwesomeIcon icon={dark ? faSun : faMoon} />
           </button>
 
           <div className="flex gap-10 allT:gap-5 items-center laptop:hidden">
@@ -113,7 +109,7 @@ function Nav({ toggleSearch }) {
         <button
           title="Search"
           className="laptop:hidden w-10 h-10 flex items-center justify-center text-xl text-white"
-          onClick={handleSearch}
+          onClick={toggleSearch}
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
@@ -129,15 +125,16 @@ function Nav({ toggleSearch }) {
         <div className="flex gap-6 items-center allIL:hidden">
           <button
             title="Theme"
-            onClick={setTheTheme}
+            onClick={toggleDark}
             className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"
           >
-            <FontAwesomeIcon icon={themeIcon} />
+            <FontAwesomeIcon icon={dark ? faSun : faMoon} />
           </button>
 
           <button
             title="Search"
             className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"
+            onClick={toggleSearch}
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>

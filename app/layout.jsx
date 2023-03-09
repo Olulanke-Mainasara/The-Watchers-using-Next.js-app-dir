@@ -1,39 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Nav from "./Components/sections/Nav";
 import Footer from "./Components/sections/Footer";
 import Splash from "./Components/features/Splash-Screen/Splash";
 import Search from "./Components/features/Search/Search";
 import "./globals.css";
+import useStore from "./Components/providers/navStore";
 
 export default function RootLayout({ children }) {
-  const [height, setHeight] = useState("h-screen overflow-hidden");
-  const [search, setSearch] = useState(false)
+  const { splash, dark, toggleSplash } = useStore();
 
   useEffect(() => {
     const timeOut = setTimeout(() => {
-      setHeight("h-auto overflow-scroll");
+      toggleSplash();
     }, 2500);
     return () => clearTimeout(timeOut);
-  }, [height]);
-
-  function toggleSearch() {
-    setSearch(!search)
-  }
+  }, []);
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`${dark ? "dark" : ""}`}>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
       <body className="dark:bg-black">
-        <div className={`${height}`}>
+        <div
+          className={`${
+            splash ? "h-screen overflow-hidden" : "h-auto overflow-scroll"
+          }`}
+        >
           <Splash />
-          {/* <Search search={search} /> */}
-          <Nav toggleSearch={toggleSearch} />
+          <Search />
+          <Nav />
           {children}
           <Footer />
         </div>
