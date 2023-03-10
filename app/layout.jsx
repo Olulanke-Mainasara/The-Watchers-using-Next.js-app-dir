@@ -5,8 +5,8 @@ import Nav from "./Components/sections/Nav";
 import Footer from "./Components/sections/Footer";
 import Splash from "./Components/features/Splash-Screen/Splash";
 import Search from "./Components/features/Search/Search";
-import "./globals.css";
 import useStore from "./Components/providers/navStore";
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   const { splash, dark, toggleSplash } = useStore();

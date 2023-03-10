@@ -22,7 +22,7 @@ function Footer() {
       className="w-full h-[70vh] flex flex-col px-10 bg-gray-800 text-white allIL:h-fit allEM:px-8 allT:px-6"
     >
       <section className="flex gap-10 allIL:gap-0 basis-4/5 allIL:flex-col">
-        <section className="flex flex-col h-full justify-center basis-1/2 allLM:flex-row allLM:items-center allLM:border-white allIL:border-b allLM:py-8">
+        <section className="flex flex-col h-full justify-center basis-1/2 allLM:flex-row allLM:items-center allLM:border-white allIL:border-b allLM:py-8 allLM:gap-8">
           <div className="flex h-full flex-col justify-center gap-6 allIL:basis-1/2 border-slate-100 border-b allLM:border-b-0 allEMT:py-8">
             <a href="#hero" className="w-fit mx-auto">
               <img
@@ -31,7 +31,7 @@ function Footer() {
                 src={"/The Universe 2.jpg"}
               />
             </a>
-            <p className="text-lg 2xl:text-2xl">
+            <p className="text-base 2xl:text-xl">
               The Watchers - Exploring the wonders of the universe, one story at
               a time. Join our community and stay up-to-date with the latest
               discoveries, breakthroughs, and insights across a variety of
@@ -42,7 +42,7 @@ function Footer() {
 
           <div className="h-full flex flex-col gap-5 justify-center allEMT:py-8">
             <p className="text-xl 2xl:text-2xl">Subscribe to our newsletter</p>
-            <p className="block text-slate-00">
+            <p className="">
               The latest news, articles, and resources, sent to your inbox
               weekly.
             </p>

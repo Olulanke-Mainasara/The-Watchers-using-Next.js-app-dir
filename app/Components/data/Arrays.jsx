@@ -149,3 +149,35 @@ export const footerlinks = [
     linkFour: "Guides",
   },
 ];
+
+{
+  /* <div className="flex justify-between">
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl 2xl:after:text-2xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Articles']">
+              1K+
+            </p>
+
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Users']">
+              1M+
+            </p>
+
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Awards']">
+              5+
+            </p>
+          </div> */
+}
+
+{
+  /* <div className="flex justify-between">
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Downloads']">
+              520K+
+            </p>
+
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Reads-Day']">
+              400K+
+            </p>
+
+            <p className="relative text-6xl allLM:text-4xl after:absolute after:-bottom-8 after:left-0 after:w-auto after:text-xl allEM:text-3xl allEM:after:text-lg allT:text-2xl allT:after:text-sm after:content-['Dailies']">
+              10+
+            </p>
+          </div> */
+}

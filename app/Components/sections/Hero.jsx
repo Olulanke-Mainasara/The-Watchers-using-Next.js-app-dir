@@ -21,13 +21,13 @@ function Hero() {
           <Link
             href="#"
             title="Categories"
-            className="rounded-3xl w-fit border border-black bg-white px-5 py-4 allT:py-3 text-black text-2xl transition-colors duration-300 hover:bg-black hover:text-white hover:border-white allEMT:text-lg"
+            className="rounded-3xl w-fit border border-black bg-white px-6 py-4 2xl:text-2xl allT:py-3 text-black text-xl transition-colors duration-300 hover:bg-black hover:text-white hover:border-white allEMT:text-lg"
           >
             Start reading
           </Link>
           <a
             href="#news"
-            className="w-fit px-7 py-4 text-white text-2xl allEMT:text-lg allEM:pr-0"
+            className="w-fit px-7 py-3 text-white text-xl allEMT:text-lg allEM:pr-0"
             title="Today's Articles"
           >
             Today's articles <FontAwesomeIcon icon={faChevronRight} />

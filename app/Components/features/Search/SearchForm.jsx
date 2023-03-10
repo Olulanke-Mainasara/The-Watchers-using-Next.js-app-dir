@@ -7,12 +7,12 @@ function SearchForm() {
   const { toggleSearch } = useStore();
 
   return (
-    <div className="flex flex-col w-[90%] max-w-3xl bg-white text-black rounded-lg overflow-hidden">
+    <div className="flex flex-col w-[90%] max-w-3xl bg-black dark:bg-white text-white dark:text-black rounded-lg overflow-hidden">
       <form className="w-full flex gap-6 allT:gap-3 px-3 items-center border-none border-b-black">
-        <FontAwesomeIcon className="text-lg text-black" icon={faSearch} />
+        <FontAwesomeIcon className="text-lg" icon={faSearch} />
         <input
           type="search"
-          className="w-full rounded-lg py-3 outline-none"
+          className="w-full bg-black dark:bg-white py-3 outline-none"
           placeholder="Search encyclopedia"
         />
         <button
@@ -21,7 +21,7 @@ function SearchForm() {
             toggleSearch();
           }}
         >
-          <FontAwesomeIcon className="text-xl text-black" icon={faClose} />
+          <FontAwesomeIcon className="text-xl" icon={faClose} />
         </button>
       </form>
       <hr />

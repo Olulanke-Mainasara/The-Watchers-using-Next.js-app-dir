@@ -109,7 +109,9 @@ function Nav() {
         <button
           title="Search"
           className="laptop:hidden w-10 h-10 flex items-center justify-center text-xl text-white"
-          onClick={toggleSearch}
+          onClick={() => {
+            toggleSearch();
+          }}
         >
           <FontAwesomeIcon icon={faSearch} />
         </button>
@@ -134,7 +136,9 @@ function Nav() {
           <button
             title="Search"
             className="w-10 h-10 rounded-full flex items-center justify-center text-xl text-white"
-            onClick={toggleSearch}
+            onClick={() => {
+              toggleSearch();
+            }}
           >
             <FontAwesomeIcon icon={faSearch} />
           </button>
